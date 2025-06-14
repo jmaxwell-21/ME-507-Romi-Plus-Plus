@@ -1,0 +1,33 @@
+\doxysection{Inc/command\+\_\+parser.h File Reference}
+\hypertarget{command__parser_8h}{}\label{command__parser_8h}\index{Inc/command\_parser.h@{Inc/command\_parser.h}}
+
+
+Header for UART command parsing module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{command__parser_8h_a6b20d41d6252e9871430c242cb1a56e7}\label{command__parser_8h_a6b20d41d6252e9871430c242cb1a56e7} 
+\#define {\bfseries BUFFER\+\_\+\+SIZE}~64
+\begin{DoxyCompactList}\small\item\em Maximum buffer size for incoming UART command stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{command__parser_8h_a7859af7e1d2d58c1bc67f781bbfbe818}\label{command__parser_8h_a7859af7e1d2d58c1bc67f781bbfbe818} 
+uint8\+\_\+t {\bfseries rx\+\_\+buffer} \mbox{[}\mbox{\hyperlink{command__parser_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em DMA-\/compatible receive buffer for UART. \end{DoxyCompactList}\item 
+\Hypertarget{command__parser_8h_a2359bfa4a10109d5dcc2e002cb8ece47}\label{command__parser_8h_a2359bfa4a10109d5dcc2e002cb8ece47} 
+uint8\+\_\+t {\bfseries buffer\+\_\+index}
+\begin{DoxyCompactList}\small\item\em Current write index into rx\+\_\+buffer. \end{DoxyCompactList}\item 
+\Hypertarget{command__parser_8h_a6dcf3de33714573b301e5db87df1f4f9}\label{command__parser_8h_a6dcf3de33714573b301e5db87df1f4f9} 
+volatile uint8\+\_\+t {\bfseries command\+\_\+ready}
+\begin{DoxyCompactList}\small\item\em Flag indicating a complete command is available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for UART command parsing module. 
+
+Provides a C++ class for interpreting control messages received via DMA UART from an external controller. Includes setpoint extraction for motors and heading. 

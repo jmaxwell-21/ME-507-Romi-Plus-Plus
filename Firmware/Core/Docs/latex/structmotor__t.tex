@@ -1,0 +1,61 @@
+\doxysection{motor\+\_\+t Struct Reference}
+\hypertarget{structmotor__t}{}\label{structmotor__t}\index{motor\_t@{motor\_t}}
+
+
+Struct representing a DC motor controlled by two PWM channels.  
+
+
+
+
+{\ttfamily \#include $<$motor\+\_\+driver.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structmotor__t_a856e42e815289c9e2a05f9f50183f9b0}{duty}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structmotor__t_a773d5dfb4db57609948b961bbfec6197}{htim}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structmotor__t_a7ab9baa95a5d0c1832a14b45b80b5a73}{ch\+\_\+A}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structmotor__t_a78c87ae23f6a4d6234ecd9e989e3dc2b}{ch\+\_\+B}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct representing a DC motor controlled by two PWM channels. 
+
+Stores duty cycle, timer handle, and output channels used to set motor speed and direction. 
+
+\label{doc-variable-members}
+\Hypertarget{structmotor__t_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structmotor__t_a7ab9baa95a5d0c1832a14b45b80b5a73}\index{motor\_t@{motor\_t}!ch\_A@{ch\_A}}
+\index{ch\_A@{ch\_A}!motor\_t@{motor\_t}}
+\doxysubsubsection{\texorpdfstring{ch\_A}{ch\_A}}
+{\footnotesize\ttfamily \label{structmotor__t_a7ab9baa95a5d0c1832a14b45b80b5a73} 
+uint32\+\_\+t motor\+\_\+t\+::ch\+\_\+A}
+
+Timer channel A for one motor lead \Hypertarget{structmotor__t_a78c87ae23f6a4d6234ecd9e989e3dc2b}\index{motor\_t@{motor\_t}!ch\_B@{ch\_B}}
+\index{ch\_B@{ch\_B}!motor\_t@{motor\_t}}
+\doxysubsubsection{\texorpdfstring{ch\_B}{ch\_B}}
+{\footnotesize\ttfamily \label{structmotor__t_a78c87ae23f6a4d6234ecd9e989e3dc2b} 
+uint32\+\_\+t motor\+\_\+t\+::ch\+\_\+B}
+
+Timer channel B for the other motor lead \Hypertarget{structmotor__t_a856e42e815289c9e2a05f9f50183f9b0}\index{motor\_t@{motor\_t}!duty@{duty}}
+\index{duty@{duty}!motor\_t@{motor\_t}}
+\doxysubsubsection{\texorpdfstring{duty}{duty}}
+{\footnotesize\ttfamily \label{structmotor__t_a856e42e815289c9e2a05f9f50183f9b0} 
+int32\+\_\+t motor\+\_\+t\+::duty}
+
+Signed duty cycle value (-\/100\% to +100\%) scaled to timer period \Hypertarget{structmotor__t_a773d5dfb4db57609948b961bbfec6197}\index{motor\_t@{motor\_t}!htim@{htim}}
+\index{htim@{htim}!motor\_t@{motor\_t}}
+\doxysubsubsection{\texorpdfstring{htim}{htim}}
+{\footnotesize\ttfamily \label{structmotor__t_a773d5dfb4db57609948b961bbfec6197} 
+TIM\+\_\+\+Handle\+Type\+Def\texorpdfstring{$\ast$}{*} motor\+\_\+t\+::htim}
+
+Pointer to the timer used for PWM generation 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Inc/\mbox{\hyperlink{motor__driver_8h}{motor\+\_\+driver.\+h}}\end{DoxyCompactItemize}

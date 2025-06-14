@@ -1,0 +1,99 @@
+\doxysection{MOTOR\+\_\+\+TASK Class Reference}
+\hypertarget{class_m_o_t_o_r___t_a_s_k}{}\label{class_m_o_t_o_r___t_a_s_k}\index{MOTOR\_TASK@{MOTOR\_TASK}}
+
+
+Finite State Machine for low-\/level motor control.  
+
+
+
+
+{\ttfamily \#include $<$motor\+\_\+task.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764e}{state}} \{ \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eaef9cab90e249ed385da6f46cebea30a5}{S0\+\_\+\+INIT}}
+, \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eae176dfa4e642ce0fdebe3e2f3a8c637f}{S1\+\_\+\+IDLE}}
+, \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eaa6081173e732510f654678a1c39eda63}{S2\+\_\+\+RUN}}
+ \}
+\item 
+\Hypertarget{class_m_o_t_o_r___t_a_s_k_ac9857afba71e7c914232ddd2a938dc28}\label{class_m_o_t_o_r___t_a_s_k_ac9857afba71e7c914232ddd2a938dc28} 
+typedef enum \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764e}{MOTOR\+\_\+\+TASK\+::state}} {\bfseries state\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_ae26d0eb531047dbe9138db9fdfa3e919}{MOTOR\+\_\+\+TASK}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_m_o_t_o_r___t_a_s_k}{MOTOR\+\_\+\+TASK} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a5f7351d0feb13b529c1589a9e4108a49}{run}} (void)
+\begin{DoxyCompactList}\small\item\em Executes one iteration of the motor control task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Finite State Machine for low-\/level motor control. 
+
+Handles PID control for two motors using encoder feedback. Receives setpoints from higher-\/level modules (e.\+g., balance or heading). 
+
+\label{doc-enum-members}
+\Hypertarget{class_m_o_t_o_r___t_a_s_k_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764e}\index{MOTOR\_TASK@{MOTOR\_TASK}!state@{state}}
+\index{state@{state}!MOTOR\_TASK@{MOTOR\_TASK}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764e} 
+enum \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764e}{MOTOR\+\_\+\+TASK\+::state}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S0\_INIT@{S0\_INIT}!MOTOR\_TASK@{MOTOR\_TASK}}\index{MOTOR\_TASK@{MOTOR\_TASK}!S0\_INIT@{S0\_INIT}}}\Hypertarget{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eaef9cab90e249ed385da6f46cebea30a5}\label{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eaef9cab90e249ed385da6f46cebea30a5} 
+S0\+\_\+\+INIT&Initialization state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S1\_IDLE@{S1\_IDLE}!MOTOR\_TASK@{MOTOR\_TASK}}\index{MOTOR\_TASK@{MOTOR\_TASK}!S1\_IDLE@{S1\_IDLE}}}\Hypertarget{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eae176dfa4e642ce0fdebe3e2f3a8c637f}\label{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eae176dfa4e642ce0fdebe3e2f3a8c637f} 
+S1\+\_\+\+IDLE&Idle (standby) state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S2\_RUN@{S2\_RUN}!MOTOR\_TASK@{MOTOR\_TASK}}\index{MOTOR\_TASK@{MOTOR\_TASK}!S2\_RUN@{S2\_RUN}}}\Hypertarget{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eaa6081173e732510f654678a1c39eda63}\label{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eaa6081173e732510f654678a1c39eda63} 
+S2\+\_\+\+RUN&Active motor control loop. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_m_o_t_o_r___t_a_s_k_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_m_o_t_o_r___t_a_s_k_ae26d0eb531047dbe9138db9fdfa3e919}\index{MOTOR\_TASK@{MOTOR\_TASK}!MOTOR\_TASK@{MOTOR\_TASK}}
+\index{MOTOR\_TASK@{MOTOR\_TASK}!MOTOR\_TASK@{MOTOR\_TASK}}
+\doxysubsubsection{\texorpdfstring{MOTOR\_TASK()}{MOTOR\_TASK()}}
+{\footnotesize\ttfamily \label{class_m_o_t_o_r___t_a_s_k_ae26d0eb531047dbe9138db9fdfa3e919} 
+MOTOR\+\_\+\+TASK\+::\+MOTOR\+\_\+\+TASK (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_m_o_t_o_r___t_a_s_k}{MOTOR\+\_\+\+TASK} class. 
+
+Initializes the FSM state and configures motor and encoder objects. 
+
+\label{doc-func-members}
+\Hypertarget{class_m_o_t_o_r___t_a_s_k_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_o_t_o_r___t_a_s_k_a5f7351d0feb13b529c1589a9e4108a49}\index{MOTOR\_TASK@{MOTOR\_TASK}!run@{run}}
+\index{run@{run}!MOTOR\_TASK@{MOTOR\_TASK}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_m_o_t_o_r___t_a_s_k_a5f7351d0feb13b529c1589a9e4108a49} 
+void MOTOR\+\_\+\+TASK\+::run (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Executes one iteration of the motor control task. 
+
+Executes one iteration of the \doxylink{class_m_o_t_o_r___t_a_s_k}{MOTOR\+\_\+\+TASK} FSM.
+
+Updates encoder data, applies PID logic, and adjusts PWM outputs.
+
+Manages motor state transitions, runs PID control using encoder feedback, and integrates control efforts from balance and heading modules. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Inc/\mbox{\hyperlink{motor__task_8h}{motor\+\_\+task.\+h}}\item 
+Src/motor\+\_\+task.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,50 @@
+\doxysection{encoder.\+h}
+\hypertarget{encoder_8h_source}{}\label{encoder_8h_source}\index{Inc/encoder.h@{Inc/encoder.h}}
+\mbox{\hyperlink{encoder_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ encoder.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ May\ 27,\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ jacka}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_ENCODER\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_ENCODER\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{time__utils_8h}{time\_utils.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <stm32f4xx\_hal.h>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ TIM\_HandleTypeDef\ *\mbox{\hyperlink{structencoder__t_ab261d27270a82f235db6c67840556fcb}{htim}};\ \ }
+\DoxyCodeLine{00033\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structencoder__t_a0fd6b4f8815c538a94db72846f3d88cd}{last\_count}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structencoder__t_a955921f275d4549d2e57f10cdef3bf45}{position}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structencoder__t_a95021154678be1fe58b20ef8200d9f84}{last\_time\_us}};\ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structencoder__t_a37a06f353c448694f29b00ce0126d4fb}{delta}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structencoder__t_a91c6fc842560bdd2ef14436c0135d4e6}{speed\_cps}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \}\ \mbox{\hyperlink{structencoder__t}{encoder\_t}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{encoder_8h_a0d281a523aec02f31d4feb4bb3f35d51}{encoder\_init}}(\mbox{\hyperlink{structencoder__t}{encoder\_t}}\ *encoder,\ TIM\_HandleTypeDef\ *htim);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{encoder_8h_a01f4459d7b34aebb118a13ab9f8a80ae}{encoder\_update}}(\mbox{\hyperlink{structencoder__t}{encoder\_t}}\ *encoder);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ int32\_t\ \mbox{\hyperlink{encoder_8h_a11e428db5d837a0db2d37f04a95e74e5}{encoder\_getposition}}(\mbox{\hyperlink{structencoder__t}{encoder\_t}}\ *encoder);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ int32\_t\ \mbox{\hyperlink{encoder_8h_a35cc8efb5877f4de74fae409748be0dc}{encoder\_getdelta}}(\mbox{\hyperlink{structencoder__t}{encoder\_t}}\ *encoder);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{encoder_8h_a6b1ea1a649b4593daa55f65094db7f04}{encoder\_getspeed}}(\mbox{\hyperlink{structencoder__t}{encoder\_t}}\ *encoder);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{encoder_8h_a839c6e77e921e4b73f91b67e141dd1ac}{encoder\_reset}}(\mbox{\hyperlink{structencoder__t}{encoder\_t}}\ *encoder);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_ENCODER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

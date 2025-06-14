@@ -1,0 +1,68 @@
+\doxysection{command\+\_\+parser.\+h}
+\hypertarget{command__parser_8h_source}{}\label{command__parser_8h_source}\index{Inc/command\_parser.h@{Inc/command\_parser.h}}
+\mbox{\hyperlink{command__parser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ command\_parser.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Jun\ 10,\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ jacka}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_COMMAND\_PARSER\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_COMMAND\_PARSER\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ BUFFER\_SIZE\ 64}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{command__parser_8h_a7859af7e1d2d58c1bc67f781bbfbe818}{rx\_buffer}}[\mbox{\hyperlink{command__parser_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}}];}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{command__parser_8h_a2359bfa4a10109d5dcc2e002cb8ece47}{buffer\_index}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ uint8\_t\ \mbox{\hyperlink{command__parser_8h_a6dcf3de33714573b301e5db87df1f4f9}{command\_ready}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }COMMAND\_PARSER\ \{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ COMMAND\_PARSER();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ parse();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ int16\_t\ get\_M1\_set()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ int16\_t\ get\_M2\_set()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ int16\_t\ get\_headset()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{char}\ get\_mode()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00087\ \ \ \ \ int16\_t\ M1\_set;\ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ int16\_t\ M2\_set;\ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ int16\_t\ headset;\ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{char}\ mode;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00101\ \ \ \ \ int16\_t\ hex4\_to\_int16(\textcolor{keywordtype}{char}\ c1,\ \textcolor{keywordtype}{char}\ c2,\ \textcolor{keywordtype}{char}\ c3,\ \textcolor{keywordtype}{char}\ c4,\ \textcolor{keywordtype}{int}*\ valid);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ hex\_char\_to\_val(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00117\ \ \ \ \ int8\_t\ hex\_to\_signed(\textcolor{keywordtype}{char}\ high,\ \textcolor{keywordtype}{char}\ low,\ \textcolor{keywordtype}{int}*\ valid);}
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_COMMAND\_PARSER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

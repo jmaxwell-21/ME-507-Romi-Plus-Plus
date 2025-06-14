@@ -1,0 +1,77 @@
+\doxysection{encoder\+\_\+t Struct Reference}
+\hypertarget{structencoder__t}{}\label{structencoder__t}\index{encoder\_t@{encoder\_t}}
+
+
+Structure for tracking encoder state and motion data.  
+
+
+
+
+{\ttfamily \#include $<$encoder.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structencoder__t_ab261d27270a82f235db6c67840556fcb}{htim}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structencoder__t_a0fd6b4f8815c538a94db72846f3d88cd}{last\+\_\+count}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structencoder__t_a955921f275d4549d2e57f10cdef3bf45}{position}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structencoder__t_a95021154678be1fe58b20ef8200d9f84}{last\+\_\+time\+\_\+us}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structencoder__t_a37a06f353c448694f29b00ce0126d4fb}{delta}}
+\item 
+float \mbox{\hyperlink{structencoder__t_a91c6fc842560bdd2ef14436c0135d4e6}{speed\+\_\+cps}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure for tracking encoder state and motion data. 
+
+Contains hardware timer reference, historical state, and calculated speed in counts per second (CPS). 
+
+\label{doc-variable-members}
+\Hypertarget{structencoder__t_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structencoder__t_a37a06f353c448694f29b00ce0126d4fb}\index{encoder\_t@{encoder\_t}!delta@{delta}}
+\index{delta@{delta}!encoder\_t@{encoder\_t}}
+\doxysubsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily \label{structencoder__t_a37a06f353c448694f29b00ce0126d4fb} 
+int32\+\_\+t encoder\+\_\+t\+::delta}
+
+Count delta since last update \Hypertarget{structencoder__t_ab261d27270a82f235db6c67840556fcb}\index{encoder\_t@{encoder\_t}!htim@{htim}}
+\index{htim@{htim}!encoder\_t@{encoder\_t}}
+\doxysubsubsection{\texorpdfstring{htim}{htim}}
+{\footnotesize\ttfamily \label{structencoder__t_ab261d27270a82f235db6c67840556fcb} 
+TIM\+\_\+\+Handle\+Type\+Def\texorpdfstring{$\ast$}{*} encoder\+\_\+t\+::htim}
+
+Pointer to hardware timer configured for encoder mode \Hypertarget{structencoder__t_a0fd6b4f8815c538a94db72846f3d88cd}\index{encoder\_t@{encoder\_t}!last\_count@{last\_count}}
+\index{last\_count@{last\_count}!encoder\_t@{encoder\_t}}
+\doxysubsubsection{\texorpdfstring{last\_count}{last\_count}}
+{\footnotesize\ttfamily \label{structencoder__t_a0fd6b4f8815c538a94db72846f3d88cd} 
+int32\+\_\+t encoder\+\_\+t\+::last\+\_\+count}
+
+Previous timer counter value \Hypertarget{structencoder__t_a95021154678be1fe58b20ef8200d9f84}\index{encoder\_t@{encoder\_t}!last\_time\_us@{last\_time\_us}}
+\index{last\_time\_us@{last\_time\_us}!encoder\_t@{encoder\_t}}
+\doxysubsubsection{\texorpdfstring{last\_time\_us}{last\_time\_us}}
+{\footnotesize\ttfamily \label{structencoder__t_a95021154678be1fe58b20ef8200d9f84} 
+uint32\+\_\+t encoder\+\_\+t\+::last\+\_\+time\+\_\+us}
+
+Timestamp of last update in microseconds \Hypertarget{structencoder__t_a955921f275d4549d2e57f10cdef3bf45}\index{encoder\_t@{encoder\_t}!position@{position}}
+\index{position@{position}!encoder\_t@{encoder\_t}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{structencoder__t_a955921f275d4549d2e57f10cdef3bf45} 
+int32\+\_\+t encoder\+\_\+t\+::position}
+
+Cumulative position in encoder counts \Hypertarget{structencoder__t_a91c6fc842560bdd2ef14436c0135d4e6}\index{encoder\_t@{encoder\_t}!speed\_cps@{speed\_cps}}
+\index{speed\_cps@{speed\_cps}!encoder\_t@{encoder\_t}}
+\doxysubsubsection{\texorpdfstring{speed\_cps}{speed\_cps}}
+{\footnotesize\ttfamily \label{structencoder__t_a91c6fc842560bdd2ef14436c0135d4e6} 
+float encoder\+\_\+t\+::speed\+\_\+cps}
+
+Calculated speed in counts per second 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Inc/\mbox{\hyperlink{encoder_8h}{encoder.\+h}}\end{DoxyCompactItemize}

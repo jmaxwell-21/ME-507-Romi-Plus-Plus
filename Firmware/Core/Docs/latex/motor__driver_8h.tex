@@ -1,0 +1,105 @@
+\doxysection{Inc/motor\+\_\+driver.h File Reference}
+\hypertarget{motor__driver_8h}{}\label{motor__driver_8h}\index{Inc/motor\_driver.h@{Inc/motor\_driver.h}}
+
+
+Low-\/level motor control interface for STM32 using PWM.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmotor__t}{motor\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Struct representing a DC motor controlled by two PWM channels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{motor__driver_8h_a2f641758e0fa8e27d60ee59ece397f59}{motor\+\_\+set\+\_\+duty}} (\mbox{\hyperlink{structmotor__t}{motor\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+mot, int32\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em Sets the PWM duty cycle to control motor speed and direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor__driver_8h_ace1968bd49ab675a540ed0d2edb4ac26}{motor\+\_\+enable}} (\mbox{\hyperlink{structmotor__t}{motor\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+mot)
+\begin{DoxyCompactList}\small\item\em Enables PWM output to the motor by starting both channels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor__driver_8h_a1f6976479a67dcb435a19de74c5d6e60}{motor\+\_\+disable}} (\mbox{\hyperlink{structmotor__t}{motor\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+mot)
+\begin{DoxyCompactList}\small\item\em Disables PWM output to the motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Low-\/level motor control interface for STM32 using PWM. 
+
+Defines the motor object and provides function prototypes to control motor direction and speed through timer-\/based PWM outputs. 
+
+\label{doc-func-members}
+\Hypertarget{motor__driver_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{motor__driver_8h_a1f6976479a67dcb435a19de74c5d6e60}\index{motor\_driver.h@{motor\_driver.h}!motor\_disable@{motor\_disable}}
+\index{motor\_disable@{motor\_disable}!motor\_driver.h@{motor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{motor\_disable()}{motor\_disable()}}
+{\footnotesize\ttfamily \label{motor__driver_8h_a1f6976479a67dcb435a19de74c5d6e60} 
+void motor\+\_\+disable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotor__t}{motor\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+mot}{}\end{DoxyParamCaption})}
+
+
+
+Disables PWM output to the motor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+mot} & Pointer to motor object.\\
+\hline
+\end{DoxyParams}
+Disables PWM output to the motor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+mot} & Pointer to motor object to disable.\\
+\hline
+\end{DoxyParams}
+Stops the timer\textquotesingle{}s PWM outputs on the assigned motor channels. \Hypertarget{motor__driver_8h_ace1968bd49ab675a540ed0d2edb4ac26}\index{motor\_driver.h@{motor\_driver.h}!motor\_enable@{motor\_enable}}
+\index{motor\_enable@{motor\_enable}!motor\_driver.h@{motor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{motor\_enable()}{motor\_enable()}}
+{\footnotesize\ttfamily \label{motor__driver_8h_ace1968bd49ab675a540ed0d2edb4ac26} 
+void motor\+\_\+enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotor__t}{motor\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+mot}{}\end{DoxyParamCaption})}
+
+
+
+Enables PWM output to the motor by starting both channels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+mot} & Pointer to motor object.\\
+\hline
+\end{DoxyParams}
+Enables PWM output to the motor by starting both channels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+mot} & Pointer to motor object to enable.\\
+\hline
+\end{DoxyParams}
+Starts the timer\textquotesingle{}s PWM outputs on the assigned motor channels. \Hypertarget{motor__driver_8h_a2f641758e0fa8e27d60ee59ece397f59}\index{motor\_driver.h@{motor\_driver.h}!motor\_set\_duty@{motor\_set\_duty}}
+\index{motor\_set\_duty@{motor\_set\_duty}!motor\_driver.h@{motor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{motor\_set\_duty()}{motor\_set\_duty()}}
+{\footnotesize\ttfamily \label{motor__driver_8h_a2f641758e0fa8e27d60ee59ece397f59} 
+void motor\+\_\+set\+\_\+duty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotor__t}{motor\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+mot}{, }\item[{int32\+\_\+t}]{duty}{}\end{DoxyParamCaption})}
+
+
+
+Sets the PWM duty cycle to control motor speed and direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+mot} & Pointer to motor object. \\
+\hline
+{\em duty} & Signed duty cycle (-\/timer period to +timer period).\\
+\hline
+\end{DoxyParams}
+Sets the PWM duty cycle to control motor speed and direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+mot} & Pointer to motor object. \\
+\hline
+{\em duty} & Signed value representing the duty cycle (positive = forward, negative = reverse).\\
+\hline
+\end{DoxyParams}
+Saturates the input duty cycle to match the timer auto-\/reload (ARR) value. Enforces a deadzone below which effort is ignored. Uses two complementary PWM channels to drive H-\/bridge outputs. 

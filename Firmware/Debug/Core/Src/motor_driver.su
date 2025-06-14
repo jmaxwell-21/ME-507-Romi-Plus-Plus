@@ -1,0 +1,3 @@
+../Core/Src/motor_driver.c:18:6:motor_enable	16	static
+../Core/Src/motor_driver.c:28:6:motor_disable	16	static
+../Core/Src/motor_driver.c:41:6:motor_set_duty	32	static

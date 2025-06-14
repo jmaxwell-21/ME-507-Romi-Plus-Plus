@@ -1,0 +1,73 @@
+\doxysection{Inc/motor\+\_\+task.h File Reference}
+\hypertarget{motor__task_8h}{}\label{motor__task_8h}\index{Inc/motor\_task.h@{Inc/motor\_task.h}}
+
+
+Motor control task with feedback and coordination logic.  
+
+
+{\ttfamily \#include "{}motor\+\_\+driver.\+h"{}}\newline
+{\ttfamily \#include "{}encoder.\+h"{}}\newline
+{\ttfamily \#include "{}bluetooth.\+h"{}}\newline
+{\ttfamily \#include "{}command\+\_\+parser.\+h"{}}\newline
+{\ttfamily \#include "{}heading.\+h"{}}\newline
+{\ttfamily \#include "{}balance.\+h"{}}\newline
+{\ttfamily \#include "{}time\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k}{MOTOR\+\_\+\+TASK}}
+\begin{DoxyCompactList}\small\item\em Finite State Machine for low-\/level motor control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{motor__task_8h_a25fc663547539bc49fecc0011bd76ab5}\label{motor__task_8h_a25fc663547539bc49fecc0011bd76ab5} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim1}
+\begin{DoxyCompactList}\small\item\em Timer handle for PWM generation on motor 1. \end{DoxyCompactList}\item 
+\Hypertarget{motor__task_8h_aac3d2c59ee0e3bbae1b99529a154eb62}\label{motor__task_8h_aac3d2c59ee0e3bbae1b99529a154eb62} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim3}
+\begin{DoxyCompactList}\small\item\em Timer handle for encoder 1 (e.\+g., left wheel). \end{DoxyCompactList}\item 
+\Hypertarget{motor__task_8h_a85788cec5a97ee377e4ee2e74f026484}\label{motor__task_8h_a85788cec5a97ee377e4ee2e74f026484} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim4}
+\begin{DoxyCompactList}\small\item\em Timer handle for encoder 2 (e.\+g., right wheel). \end{DoxyCompactList}\item 
+\Hypertarget{motor__task_8h_acefaeaaa3856ddddae7083b2d220fe4b}\label{motor__task_8h_acefaeaaa3856ddddae7083b2d220fe4b} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim5}
+\begin{DoxyCompactList}\small\item\em Timer handle for motor 2 PWM generation. \end{DoxyCompactList}\item 
+\Hypertarget{motor__task_8h_a9b790b620dceefcde3befffb66864e08}\label{motor__task_8h_a9b790b620dceefcde3befffb66864e08} 
+\mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h}{BLUETOOTH}} {\bfseries bluetooth}
+\begin{DoxyCompactList}\small\item\em Global reference to Bluetooth control FSM. \end{DoxyCompactList}\item 
+COMMAND\+\_\+\+PARSER \mbox{\hyperlink{motor__task_8h_a166d58d7e5b485f50b066bb572d4e52d}{parser}}
+\begin{DoxyCompactList}\small\item\em Global reference to UART command parser. \end{DoxyCompactList}\item 
+\Hypertarget{motor__task_8h_ac620a20633fa0122af674367e4ea4baa}\label{motor__task_8h_ac620a20633fa0122af674367e4ea4baa} 
+\mbox{\hyperlink{class_h_e_a_d_i_n_g}{HEADING}} {\bfseries heading}
+\begin{DoxyCompactList}\small\item\em Global reference to heading control task. \end{DoxyCompactList}\item 
+\Hypertarget{motor__task_8h_af3f7ab56056a228ea9e41b6a599ceaa3}\label{motor__task_8h_af3f7ab56056a228ea9e41b6a599ceaa3} 
+\mbox{\hyperlink{class_b_a_l_a_n_c_e}{BALANCE}} {\bfseries balance}
+\begin{DoxyCompactList}\small\item\em Global reference to balance control task. \end{DoxyCompactList}\item 
+\Hypertarget{motor__task_8h_ab6bdf79e02c3ccb3b22efe8fb44d1818}\label{motor__task_8h_ab6bdf79e02c3ccb3b22efe8fb44d1818} 
+int32\+\_\+t {\bfseries AR}
+\begin{DoxyCompactList}\small\item\em Global auto-\/reload value for timers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Motor control task with feedback and coordination logic. 
+
+Defines the \doxylink{class_m_o_t_o_r___t_a_s_k}{MOTOR\+\_\+\+TASK} class, which uses encoder feedback and setpoints from various control modules (Bluetooth, Heading, Balance) to regulate motor speed and direction using PID control. 
+
+\label{doc-var-members}
+\Hypertarget{motor__task_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{motor__task_8h_a166d58d7e5b485f50b066bb572d4e52d}\index{motor\_task.h@{motor\_task.h}!parser@{parser}}
+\index{parser@{parser}!motor\_task.h@{motor\_task.h}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily \label{motor__task_8h_a166d58d7e5b485f50b066bb572d4e52d} 
+COMMAND\+\_\+\+PARSER parser\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Global reference to UART command parser. 
+
+Global reference to UART command parser.
+
+BNO055 data structure definition which hold euler, quaternion, linearaccel, gyro etc. parameters 

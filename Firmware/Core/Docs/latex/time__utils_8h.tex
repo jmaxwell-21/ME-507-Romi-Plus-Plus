@@ -1,0 +1,75 @@
+\doxysection{Inc/time\+\_\+utils.h File Reference}
+\hypertarget{time__utils_8h}{}\label{time__utils_8h}\index{Inc/time\_utils.h@{Inc/time\_utils.h}}
+
+
+Utility functions for microsecond-\/level timing.  
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{time__utils_8h_af543edc4b91ee97e556de2f0bbc709ad}{micros}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the number of microseconds since the timer started. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{time__utils_8h_ab33ebb2c5ca2d80d259c64a9d658589f}{delay\+\_\+us}} (uint32\+\_\+t us)
+\begin{DoxyCompactList}\small\item\em Delays execution for a specified number of microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility functions for microsecond-\/level timing. 
+
+Provides lightweight timing utilities based on hardware timers, useful for precise control loop execution and delay functions. 
+
+\label{doc-func-members}
+\Hypertarget{time__utils_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{time__utils_8h_ab33ebb2c5ca2d80d259c64a9d658589f}\index{time\_utils.h@{time\_utils.h}!delay\_us@{delay\_us}}
+\index{delay\_us@{delay\_us}!time\_utils.h@{time\_utils.h}}
+\doxysubsubsection{\texorpdfstring{delay\_us()}{delay\_us()}}
+{\footnotesize\ttfamily \label{time__utils_8h_ab33ebb2c5ca2d80d259c64a9d658589f} 
+void delay\+\_\+us (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{us}{}\end{DoxyParamCaption})}
+
+
+
+Delays execution for a specified number of microseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em us} & Delay duration in microseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Busy-\/wait implementation; not RTOS-\/friendly.
+\end{DoxyNote}
+Delays execution for a specified number of microseconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em us} & Number of microseconds to delay.\\
+\hline
+\end{DoxyParams}
+Uses a busy-\/wait loop based on the {\ttfamily \doxylink{time__utils_8h_af543edc4b91ee97e556de2f0bbc709ad}{micros()}} counter. \begin{DoxyNote}{Note}
+Not suitable for power-\/sensitive applications or inside ISRs. 
+\end{DoxyNote}
+\Hypertarget{time__utils_8h_af543edc4b91ee97e556de2f0bbc709ad}\index{time\_utils.h@{time\_utils.h}!micros@{micros}}
+\index{micros@{micros}!time\_utils.h@{time\_utils.h}}
+\doxysubsubsection{\texorpdfstring{micros()}{micros()}}
+{\footnotesize\ttfamily \label{time__utils_8h_af543edc4b91ee97e556de2f0bbc709ad} 
+uint32\+\_\+t micros (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the number of microseconds since the timer started. 
+
+\begin{DoxyReturn}{Returns}
+Elapsed time in microseconds as a 32-\/bit unsigned integer. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Requires a configured timer (e.\+g., TIM2) running at 1 MHz.
+\end{DoxyNote}
+Returns the number of microseconds since the timer started.
+
+Reads the current counter value from the TIM2 peripheral. \begin{DoxyReturn}{Returns}
+Current microsecond timestamp as a 32-\/bit unsigned integer. 
+\end{DoxyReturn}

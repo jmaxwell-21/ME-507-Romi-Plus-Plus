@@ -1,0 +1,43 @@
+\doxysection{motor\+\_\+driver.\+h}
+\hypertarget{motor__driver_8h_source}{}\label{motor__driver_8h_source}\index{Inc/motor\_driver.h@{Inc/motor\_driver.h}}
+\mbox{\hyperlink{motor__driver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ motor\_driver.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Apr\ 17,\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ jacka}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_MOTOR\_DRIVER\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_MOTOR\_DRIVER\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <stm32f4xx\_hal.h>}\ \textcolor{comment}{//\ Include\ HAL\ functions}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ int32\_t\ \ \mbox{\hyperlink{structmotor__t_a856e42e815289c9e2a05f9f50183f9b0}{duty}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ TIM\_HandleTypeDef*\ \mbox{\hyperlink{structmotor__t_a773d5dfb4db57609948b961bbfec6197}{htim}};\ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structmotor__t_a7ab9baa95a5d0c1832a14b45b80b5a73}{ch\_A}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structmotor__t_a78c87ae23f6a4d6234ecd9e989e3dc2b}{ch\_B}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \}\ \mbox{\hyperlink{structmotor__t}{motor\_t}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{motor__driver_8h_a2f641758e0fa8e27d60ee59ece397f59}{motor\_set\_duty}}(\mbox{\hyperlink{structmotor__t}{motor\_t}}*\ p\_mot,\ int32\_t\ duty);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{motor__driver_8h_ace1968bd49ab675a540ed0d2edb4ac26}{motor\_enable}}(\mbox{\hyperlink{structmotor__t}{motor\_t}}*\ p\_mot);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{motor__driver_8h_a1f6976479a67dcb435a19de74c5d6e60}{motor\_disable}}(\mbox{\hyperlink{structmotor__t}{motor\_t}}*\ p\_mot);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_MOTOR\_DRIVER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

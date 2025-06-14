@@ -1,0 +1,135 @@
+\doxysection{HEADING Class Reference}
+\hypertarget{class_h_e_a_d_i_n_g}{}\label{class_h_e_a_d_i_n_g}\index{HEADING@{HEADING}}
+
+
+Finite State Machine for heading control based on IMU data.  
+
+
+
+
+{\ttfamily \#include $<$heading.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813f}{state}} \{ \mbox{\hyperlink{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813fa007a9d86a86b1a3c8c4fbcf745cb03c4}{S0\+\_\+\+INIT}}
+, \mbox{\hyperlink{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813fa0c4f3d2f19ad317deac8074a703099a6}{S1\+\_\+\+IDLE}}
+, \mbox{\hyperlink{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813fa2e255ab022614000f50043c66d66fc2d}{S2\+\_\+\+RUN}}
+ \}
+\item 
+\Hypertarget{class_h_e_a_d_i_n_g_a7a95014edf2ff95d2aafa579c983352c}\label{class_h_e_a_d_i_n_g_a7a95014edf2ff95d2aafa579c983352c} 
+typedef enum \mbox{\hyperlink{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813f}{HEADING\+::state}} {\bfseries state\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_h_e_a_d_i_n_g_ae51ead90c2fc2400e9c10b94407b5527}{HEADING}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_h_e_a_d_i_n_g}{HEADING} class. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{class_h_e_a_d_i_n_g_ac37b75761fe40f32a9ad087f85b7bdd1}{get\+\_\+\+M1\+\_\+eff}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the motor 1 effort calculated by the heading controller. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{class_h_e_a_d_i_n_g_ac55a9115b5a6cb711527a250091aac63}{get\+\_\+\+M2\+\_\+eff}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the motor 2 effort calculated by the heading controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_h_e_a_d_i_n_g_a2022de6590885f98986a7fbd101a15b4}{run}} (void)
+\begin{DoxyCompactList}\small\item\em Executes one iteration of the heading FSM and PID controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Finite State Machine for heading control based on IMU data. 
+
+Uses a PID control loop to drive motor efforts to reduce heading error. 
+
+\label{doc-enum-members}
+\Hypertarget{class_h_e_a_d_i_n_g_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813f}\index{HEADING@{HEADING}!state@{state}}
+\index{state@{state}!HEADING@{HEADING}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813f} 
+enum \mbox{\hyperlink{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813f}{HEADING\+::state}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S0\_INIT@{S0\_INIT}!HEADING@{HEADING}}\index{HEADING@{HEADING}!S0\_INIT@{S0\_INIT}}}\Hypertarget{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813fa007a9d86a86b1a3c8c4fbcf745cb03c4}\label{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813fa007a9d86a86b1a3c8c4fbcf745cb03c4} 
+S0\+\_\+\+INIT&Initialization state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S1\_IDLE@{S1\_IDLE}!HEADING@{HEADING}}\index{HEADING@{HEADING}!S1\_IDLE@{S1\_IDLE}}}\Hypertarget{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813fa0c4f3d2f19ad317deac8074a703099a6}\label{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813fa0c4f3d2f19ad317deac8074a703099a6} 
+S1\+\_\+\+IDLE&Idle state (waiting for control activation) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S2\_RUN@{S2\_RUN}!HEADING@{HEADING}}\index{HEADING@{HEADING}!S2\_RUN@{S2\_RUN}}}\Hypertarget{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813fa2e255ab022614000f50043c66d66fc2d}\label{class_h_e_a_d_i_n_g_af05af8db66011f818153ffa2a0e9813fa2e255ab022614000f50043c66d66fc2d} 
+S2\+\_\+\+RUN&Active heading control loop. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_h_e_a_d_i_n_g_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_h_e_a_d_i_n_g_ae51ead90c2fc2400e9c10b94407b5527}\index{HEADING@{HEADING}!HEADING@{HEADING}}
+\index{HEADING@{HEADING}!HEADING@{HEADING}}
+\doxysubsubsection{\texorpdfstring{HEADING()}{HEADING()}}
+{\footnotesize\ttfamily \label{class_h_e_a_d_i_n_g_ae51ead90c2fc2400e9c10b94407b5527} 
+HEADING\+::\+HEADING (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_h_e_a_d_i_n_g}{HEADING} class. 
+
+Initializes FSM state to S0\+\_\+\+INIT. 
+
+\label{doc-func-members}
+\Hypertarget{class_h_e_a_d_i_n_g_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_h_e_a_d_i_n_g_ac37b75761fe40f32a9ad087f85b7bdd1}\index{HEADING@{HEADING}!get\_M1\_eff@{get\_M1\_eff}}
+\index{get\_M1\_eff@{get\_M1\_eff}!HEADING@{HEADING}}
+\doxysubsubsection{\texorpdfstring{get\_M1\_eff()}{get\_M1\_eff()}}
+{\footnotesize\ttfamily \label{class_h_e_a_d_i_n_g_ac37b75761fe40f32a9ad087f85b7bdd1} 
+int32\+\_\+t HEADING\+::get\+\_\+\+M1\+\_\+eff (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the motor 1 effort calculated by the heading controller. 
+
+Returns the current motor 1 effort calculated by the heading controller.
+
+\begin{DoxyReturn}{Returns}
+Signed effort for motor 1.
+
+Signed 32-\/bit PWM effort value for motor 1. 
+\end{DoxyReturn}
+\Hypertarget{class_h_e_a_d_i_n_g_ac55a9115b5a6cb711527a250091aac63}\index{HEADING@{HEADING}!get\_M2\_eff@{get\_M2\_eff}}
+\index{get\_M2\_eff@{get\_M2\_eff}!HEADING@{HEADING}}
+\doxysubsubsection{\texorpdfstring{get\_M2\_eff()}{get\_M2\_eff()}}
+{\footnotesize\ttfamily \label{class_h_e_a_d_i_n_g_ac55a9115b5a6cb711527a250091aac63} 
+int32\+\_\+t HEADING\+::get\+\_\+\+M2\+\_\+eff (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the motor 2 effort calculated by the heading controller. 
+
+Returns the current motor 2 effort calculated by the heading controller.
+
+\begin{DoxyReturn}{Returns}
+Signed effort for motor 2.
+
+Signed 32-\/bit PWM effort value for motor 2. 
+\end{DoxyReturn}
+\Hypertarget{class_h_e_a_d_i_n_g_a2022de6590885f98986a7fbd101a15b4}\index{HEADING@{HEADING}!run@{run}}
+\index{run@{run}!HEADING@{HEADING}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_h_e_a_d_i_n_g_a2022de6590885f98986a7fbd101a15b4} 
+void HEADING\+::run (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Executes one iteration of the heading FSM and PID controller. 
+
+Executes one iteration of the heading control FSM.
+
+Based on IMU Euler angle data and a commanded heading setpoint, calculates a control effort using PID logic and outputs motor efforts. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Inc/\mbox{\hyperlink{heading_8h}{heading.\+h}}\item 
+Src/heading.\+cpp\end{DoxyCompactItemize}

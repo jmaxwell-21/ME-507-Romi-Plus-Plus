@@ -1,0 +1,42 @@
+\doxysection{battery\+\_\+check.\+h}
+\hypertarget{battery__check_8h_source}{}\label{battery__check_8h_source}\index{Inc/battery\_check.h@{Inc/battery\_check.h}}
+\mbox{\hyperlink{battery__check_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ battery\_check.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Jun\ 4,\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ jacka}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_BATTERY\_CHECK\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_BATTERY\_CHECK\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stm32f4xx\_hal.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ ADC\_HandleTypeDef\ \mbox{\hyperlink{battery__check_8h_a22b804736f5648d52f639b2647d4ed13}{hadc1}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_aed5ac8125ffc7805a9cf07b1544a488d}{BATTERY\_CHECK}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2}{state}}}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2a2efb3206dce96a77ef043a7b0598337f}{S0\_INIT}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2ab7b987c14e4c84315b0df446d7552718}{S1\_CHECK\_ADC}},\ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2a6fd5d034e05dfe1a3f98d474c8f8a6fc}{S2\_BATTERY\_LOW}}\ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \}\ state\_t;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_aed5ac8125ffc7805a9cf07b1544a488d}{BATTERY\_CHECK}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_a39b04b12471e7aae081fd1b457e70b98}{run}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ state\_t\ \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2}{state}};\ \ }
+\DoxyCodeLine{00057\ \ \ \ \ uint16\_t\ raw;\ \ \ }
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_BATTERY\_CHECK\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,193 @@
+\doxysection{Inc/encoder.h File Reference}
+\hypertarget{encoder_8h}{}\label{encoder_8h}\index{Inc/encoder.h@{Inc/encoder.h}}
+
+
+Quadrature encoder interface for STM32 timers.  
+
+
+{\ttfamily \#include "{}time\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure for tracking encoder state and motion data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{encoder_8h_a0d281a523aec02f31d4feb4bb3f35d51}{encoder\+\_\+init}} (\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}encoder, TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\begin{DoxyCompactList}\small\item\em Initializes an encoder structure with a given timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{encoder_8h_a01f4459d7b34aebb118a13ab9f8a80ae}{encoder\+\_\+update}} (\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}encoder)
+\begin{DoxyCompactList}\small\item\em Updates the encoder\textquotesingle{}s internal position, delta, and speed. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{encoder_8h_a11e428db5d837a0db2d37f04a95e74e5}{encoder\+\_\+getposition}} (\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}encoder)
+\begin{DoxyCompactList}\small\item\em Returns the current position (accumulated counts) of the encoder. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{encoder_8h_a35cc8efb5877f4de74fae409748be0dc}{encoder\+\_\+getdelta}} (\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}encoder)
+\begin{DoxyCompactList}\small\item\em Returns the most recent change in encoder count. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{encoder_8h_a6b1ea1a649b4593daa55f65094db7f04}{encoder\+\_\+getspeed}} (\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}encoder)
+\begin{DoxyCompactList}\small\item\em Returns the current speed in counts per second. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{encoder_8h_a839c6e77e921e4b73f91b67e141dd1ac}{encoder\+\_\+reset}} (\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}encoder)
+\begin{DoxyCompactList}\small\item\em Resets encoder position and delta tracking. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Quadrature encoder interface for STM32 timers. 
+
+Provides data structures and functions for tracking position, velocity, and delta counts using hardware timers configured in encoder mode. 
+
+\label{doc-func-members}
+\Hypertarget{encoder_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{encoder_8h_a35cc8efb5877f4de74fae409748be0dc}\index{encoder.h@{encoder.h}!encoder\_getdelta@{encoder\_getdelta}}
+\index{encoder\_getdelta@{encoder\_getdelta}!encoder.h@{encoder.h}}
+\doxysubsubsection{\texorpdfstring{encoder\_getdelta()}{encoder\_getdelta()}}
+{\footnotesize\ttfamily \label{encoder_8h_a35cc8efb5877f4de74fae409748be0dc} 
+int32\+\_\+t encoder\+\_\+getdelta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{encoder}{}\end{DoxyParamCaption})}
+
+
+
+Returns the most recent change in encoder count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Signed 32-\/bit count delta since last update.
+\end{DoxyReturn}
+Returns the most recent change in encoder count.
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Count difference since the last update. 
+\end{DoxyReturn}
+\Hypertarget{encoder_8h_a11e428db5d837a0db2d37f04a95e74e5}\index{encoder.h@{encoder.h}!encoder\_getposition@{encoder\_getposition}}
+\index{encoder\_getposition@{encoder\_getposition}!encoder.h@{encoder.h}}
+\doxysubsubsection{\texorpdfstring{encoder\_getposition()}{encoder\_getposition()}}
+{\footnotesize\ttfamily \label{encoder_8h_a11e428db5d837a0db2d37f04a95e74e5} 
+int32\+\_\+t encoder\+\_\+getposition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{encoder}{}\end{DoxyParamCaption})}
+
+
+
+Returns the current position (accumulated counts) of the encoder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Signed 32-\/bit position count.
+\end{DoxyReturn}
+Returns the current position (accumulated counts) of the encoder.
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current position in encoder counts. 
+\end{DoxyReturn}
+\Hypertarget{encoder_8h_a6b1ea1a649b4593daa55f65094db7f04}\index{encoder.h@{encoder.h}!encoder\_getspeed@{encoder\_getspeed}}
+\index{encoder\_getspeed@{encoder\_getspeed}!encoder.h@{encoder.h}}
+\doxysubsubsection{\texorpdfstring{encoder\_getspeed()}{encoder\_getspeed()}}
+{\footnotesize\ttfamily \label{encoder_8h_a6b1ea1a649b4593daa55f65094db7f04} 
+float encoder\+\_\+getspeed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{encoder}{}\end{DoxyParamCaption})}
+
+
+
+Returns the current speed in counts per second. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Speed in CPS (counts per second).
+\end{DoxyReturn}
+Returns the current speed in counts per second.
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Speed in counts per second (CPS). 
+\end{DoxyReturn}
+\Hypertarget{encoder_8h_a0d281a523aec02f31d4feb4bb3f35d51}\index{encoder.h@{encoder.h}!encoder\_init@{encoder\_init}}
+\index{encoder\_init@{encoder\_init}!encoder.h@{encoder.h}}
+\doxysubsubsection{\texorpdfstring{encoder\_init()}{encoder\_init()}}
+{\footnotesize\ttfamily \label{encoder_8h_a0d281a523aec02f31d4feb4bb3f35d51} 
+void encoder\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{encoder}{, }\item[{TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{htim}{}\end{DoxyParamCaption})}
+
+
+
+Initializes an encoder structure with a given timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure. \\
+\hline
+{\em htim} & Pointer to initialized TIM\+\_\+\+Handle\+Type\+Def configured for encoder mode.\\
+\hline
+\end{DoxyParams}
+Initializes an encoder structure with a given timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure to initialize. \\
+\hline
+{\em htim} & Pointer to a TIM\+\_\+\+Handle\+Type\+Def configured in encoder mode. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{encoder_8h_a839c6e77e921e4b73f91b67e141dd1ac}\index{encoder.h@{encoder.h}!encoder\_reset@{encoder\_reset}}
+\index{encoder\_reset@{encoder\_reset}!encoder.h@{encoder.h}}
+\doxysubsubsection{\texorpdfstring{encoder\_reset()}{encoder\_reset()}}
+{\footnotesize\ttfamily \label{encoder_8h_a839c6e77e921e4b73f91b67e141dd1ac} 
+void encoder\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{encoder}{}\end{DoxyParamCaption})}
+
+
+
+Resets encoder position and delta tracking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure.\\
+\hline
+\end{DoxyParams}
+Resets encoder position and delta tracking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{encoder_8h_a01f4459d7b34aebb118a13ab9f8a80ae}\index{encoder.h@{encoder.h}!encoder\_update@{encoder\_update}}
+\index{encoder\_update@{encoder\_update}!encoder.h@{encoder.h}}
+\doxysubsubsection{\texorpdfstring{encoder\_update()}{encoder\_update()}}
+{\footnotesize\ttfamily \label{encoder_8h_a01f4459d7b34aebb118a13ab9f8a80ae} 
+void encoder\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structencoder__t}{encoder\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{encoder}{}\end{DoxyParamCaption})}
+
+
+
+Updates the encoder\textquotesingle{}s internal position, delta, and speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure.\\
+\hline
+\end{DoxyParams}
+Updates the encoder\textquotesingle{}s internal position, delta, and speed.
+
+Computes the count delta between updates and handles overflow. Speed is calculated in counts per second (CPS). 
+\begin{DoxyParams}{Parameters}
+{\em encoder} & Pointer to encoder structure to update. \\
+\hline
+\end{DoxyParams}

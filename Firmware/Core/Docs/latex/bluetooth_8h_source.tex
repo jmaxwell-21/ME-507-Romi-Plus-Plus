@@ -1,0 +1,52 @@
+\doxysection{bluetooth.\+h}
+\hypertarget{bluetooth_8h_source}{}\label{bluetooth_8h_source}\index{Inc/bluetooth.h@{Inc/bluetooth.h}}
+\mbox{\hyperlink{bluetooth_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ bluetooth.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Jun\ 3,\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ jacka}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_BLUETOOTH\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_BLUETOOTH\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ int32\_t\ \mbox{\hyperlink{bluetooth_8h_a63996c688e64a8523490c422fb8aa722}{V}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_a4c603cf2de31a7476ea707a4c565ec0e}{BLUETOOTH}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaab}{state}}}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba5e6556fb01651b2784e95fe950a52bff}{S0\_INIT}},\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba43bc715cf2aa2c29476be4aef536d93e}{S1\_STOP}},\ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba880bcd4eb97b1b9eaa71f9b52ae6b575}{SF\_FORWARD}},\ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba83bac40782ab56bfcfd190c7045f2a77}{SB\_BACKWARD}},\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaabae4767c324d5d0318b7c9a96b73ee43ec}{SR\_RIGHT}},\ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba76150d75739445d23ac7b8db6cce155f}{SL\_LEFT}}\ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \}\ state\_t;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_a4c603cf2de31a7476ea707a4c565ec0e}{BLUETOOTH}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_a627eec7faa7dfb4b6f130b2cd8989cf5}{run}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_a10cbb488347bcf5eae1ef73fb92c2ebf}{set\_command}}(\textcolor{keywordtype}{char}\ cmd);\ \ \textcolor{comment}{//\ Called\ from\ interrupt\ handler}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ int16\_t\ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_a2d9251d66a084e7f839970e91714431c}{get\_M1\_set}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ int16\_t\ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_aa335d59079b37dbd8d99f7e253c373e6}{get\_M2\_set}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00077\ \ \ \ \ state\_t\ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaab}{state}};\ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{char}\ command;\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ int16\_t\ M1\_set;\ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ int16\_t\ M2\_set;\ \ \ }
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_BLUETOOTH\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

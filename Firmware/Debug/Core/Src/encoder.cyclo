@@ -1,0 +1,6 @@
+../Core/Src/encoder.c:15:6:encoder_init	1
+../Core/Src/encoder.c:32:6:encoder_update	4
+../Core/Src/encoder.c:58:9:encoder_getposition	1
+../Core/Src/encoder.c:67:9:encoder_getdelta	1
+../Core/Src/encoder.c:76:7:encoder_getspeed	1
+../Core/Src/encoder.c:84:6:encoder_reset	1

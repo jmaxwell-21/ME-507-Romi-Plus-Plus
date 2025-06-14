@@ -1,0 +1,68 @@
+\doxysection{Inc/bno055\+\_\+init.h File Reference}
+\hypertarget{bno055__init_8h}{}\label{bno055__init_8h}\index{Inc/bno055\_init.h@{Inc/bno055\_init.h}}
+
+
+BNO055 IMU initialization interface.  
+
+
+{\ttfamily \#include "{}BNO055\+\_\+\+STM32.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bno055__init_8h_a1d6f7a4e7397d8b2d3a47b1c743cb33d}{Sensor\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the BNO055 IMU sensor and applies configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{bno055__init_8h_a56438006451da8eae4c0fb3f2eded3e7}{Offset\+Datas}} \mbox{[}22\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array storing sensor offset and calibration data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+BNO055 IMU initialization interface. 
+
+Provides function prototype for initializing the BNO055 sensor. Also declares a buffer for storing sensor offset calibration data. 
+
+\label{doc-func-members}
+\Hypertarget{bno055__init_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{bno055__init_8h_a1d6f7a4e7397d8b2d3a47b1c743cb33d}\index{bno055\_init.h@{bno055\_init.h}!Sensor\_Init@{Sensor\_Init}}
+\index{Sensor\_Init@{Sensor\_Init}!bno055\_init.h@{bno055\_init.h}}
+\doxysubsubsection{\texorpdfstring{Sensor\_Init()}{Sensor\_Init()}}
+{\footnotesize\ttfamily \label{bno055__init_8h_a1d6f7a4e7397d8b2d3a47b1c743cb33d} 
+void Sensor\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the BNO055 IMU sensor and applies configuration. 
+
+This function sets up sensor mode, units, and optional calibration offsets.
+
+Initializes the BNO055 IMU sensor and applies configuration.
+
+Configures the BNO055 with normal operating mode, Android orientation, and unit settings. Applies hard-\/coded offset values for faster startup. Optional re-\/calibration section is provided but commented out. \begin{DoxyNote}{Note}
+This writes previously stored sensor offsets directly to the IMU, bypassing manual calibration. This is useful for consistent startup behavior.
+\end{DoxyNote}
+
+
+\label{doc-var-members}
+\Hypertarget{bno055__init_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{bno055__init_8h_a56438006451da8eae4c0fb3f2eded3e7}\index{bno055\_init.h@{bno055\_init.h}!OffsetDatas@{OffsetDatas}}
+\index{OffsetDatas@{OffsetDatas}!bno055\_init.h@{bno055\_init.h}}
+\doxysubsubsection{\texorpdfstring{OffsetDatas}{OffsetDatas}}
+{\footnotesize\ttfamily \label{bno055__init_8h_a56438006451da8eae4c0fb3f2eded3e7} 
+uint8\+\_\+t Offset\+Datas\mbox{[}22\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Array storing sensor offset and calibration data. 
+
+Contains 22 bytes used to apply or retrieve sensor calibration.
+
+Array storing sensor offset and calibration data.
+
+Pre-\/collected sensor offsets to avoid re-\/calibration on every startup. If initialization parameters change, these offsets may become invalid. 

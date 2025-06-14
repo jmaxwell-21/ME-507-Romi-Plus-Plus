@@ -1,0 +1,2 @@
+../Core/Src/battery_check.cpp:14:1:BATTERY_CHECK::BATTERY_CHECK()	1
+../Core/Src/battery_check.cpp:27:6:void BATTERY_CHECK::run()	7

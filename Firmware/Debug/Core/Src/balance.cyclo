@@ -1,0 +1,4 @@
+../Core/Src/balance.cpp:14:1:BALANCE::BALANCE()	1
+../Core/Src/balance.cpp:23:9:int32_t BALANCE::get_M1_eff()	1
+../Core/Src/balance.cpp:29:9:int32_t BALANCE::get_M2_eff()	1
+../Core/Src/balance.cpp:36:6:void BALANCE::run()	11

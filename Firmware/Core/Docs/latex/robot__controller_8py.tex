@@ -1,0 +1,32 @@
+\doxysection{C\+:/\+Users/jacka/\+Desktop/\+Cal Poly/4th Year/\+ME 507 (Mechanical Control Systems)/\+Term Project/\+Additional Code/robot\+\_\+controller.py File Reference}
+\hypertarget{robot__controller_8py}{}\label{robot__controller_8py}\index{C:/Users/jacka/Desktop/Cal Poly/4th Year/ME 507 (Mechanical Control Systems)/Term Project/Additional Code/robot\_controller.py@{C:/Users/jacka/Desktop/Cal Poly/4th Year/ME 507 (Mechanical Control Systems)/Term Project/Additional Code/robot\_controller.py}}
+
+
+A Python program for manual control of a differential drive robot.  
+
+
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{robot__controller_8py_a2513cd6ad39b90e11d3eb2949e7a9f47}\label{robot__controller_8py_a2513cd6ad39b90e11d3eb2949e7a9f47} 
+list {\bfseries robot\+\_\+controller.\+available\+\_\+ports} = \mbox{[}port.\+device for port in serial.\+tools.\+list\+\_\+ports.\+comports()\mbox{]}
+\begin{DoxyCompactList}\small\item\em Check if COM5 is available for HC-\/05 Bluetooth communication. \end{DoxyCompactList}\item 
+\Hypertarget{robot__controller_8py_aed3cce70cf82a9f7a0e08611113811bb}\label{robot__controller_8py_aed3cce70cf82a9f7a0e08611113811bb} 
+{\bfseries robot\+\_\+controller.\+timeout}
+\begin{DoxyCompactList}\small\item\em Establish serial connection to HC-\/05 on COM5. \end{DoxyCompactList}\item 
+\Hypertarget{robot__controller_8py_a47b27662455324ecb66bfc64b64389e7}\label{robot__controller_8py_a47b27662455324ecb66bfc64b64389e7} 
+{\bfseries robot\+\_\+controller.\+write\+\_\+timeout}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Python program for manual control of a differential drive robot. 
+
+This program was developed for the ME 507 class in Spring 2025 at Cal Poly. It reads keystrokes from the keyboard and transmits them via Bluetooth to the HC-\/05 module on the robot, which controls wheel movement.
+
+\begin{DoxyAuthor}{Author}
+Jack Maxwell 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/06-\/10 
+\end{DoxyDate}

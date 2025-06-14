@@ -1,0 +1,97 @@
+\doxysection{BATTERY\+\_\+\+CHECK Class Reference}
+\hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k}{}\label{class_b_a_t_t_e_r_y___c_h_e_c_k}\index{BATTERY\_CHECK@{BATTERY\_CHECK}}
+
+
+A finite state machine for monitoring battery voltage.  
+
+
+
+
+{\ttfamily \#include $<$battery\+\_\+check.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2}{state}} \{ \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2a2efb3206dce96a77ef043a7b0598337f}{S0\+\_\+\+INIT}}
+, \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2ab7b987c14e4c84315b0df446d7552718}{S1\+\_\+\+CHECK\+\_\+\+ADC}}
+, \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2a6fd5d034e05dfe1a3f98d474c8f8a6fc}{S2\+\_\+\+BATTERY\+\_\+\+LOW}}
+ \}
+\item 
+\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_a3d2804974031d3bba4495b2d0bc17ccf}\label{class_b_a_t_t_e_r_y___c_h_e_c_k_a3d2804974031d3bba4495b2d0bc17ccf} 
+typedef enum \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2}{BATTERY\+\_\+\+CHECK\+::state}} {\bfseries state\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_aed5ac8125ffc7805a9cf07b1544a488d}{BATTERY\+\_\+\+CHECK}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_b_a_t_t_e_r_y___c_h_e_c_k}{BATTERY\+\_\+\+CHECK} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_a39b04b12471e7aae081fd1b457e70b98}{run}} (void)
+\begin{DoxyCompactList}\small\item\em Executes one iteration of the battery check FSM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A finite state machine for monitoring battery voltage. 
+
+Uses ADC readings to determine if battery voltage is too low and triggers an indicator if necessary. 
+
+\label{doc-enum-members}
+\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2}\index{BATTERY\_CHECK@{BATTERY\_CHECK}!state@{state}}
+\index{state@{state}!BATTERY\_CHECK@{BATTERY\_CHECK}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2} 
+enum \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2}{BATTERY\+\_\+\+CHECK\+::state}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S0\_INIT@{S0\_INIT}!BATTERY\_CHECK@{BATTERY\_CHECK}}\index{BATTERY\_CHECK@{BATTERY\_CHECK}!S0\_INIT@{S0\_INIT}}}\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2a2efb3206dce96a77ef043a7b0598337f}\label{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2a2efb3206dce96a77ef043a7b0598337f} 
+S0\+\_\+\+INIT&Initialization state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S1\_CHECK\_ADC@{S1\_CHECK\_ADC}!BATTERY\_CHECK@{BATTERY\_CHECK}}\index{BATTERY\_CHECK@{BATTERY\_CHECK}!S1\_CHECK\_ADC@{S1\_CHECK\_ADC}}}\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2ab7b987c14e4c84315b0df446d7552718}\label{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2ab7b987c14e4c84315b0df446d7552718} 
+S1\+\_\+\+CHECK\+\_\+\+ADC&Check ADC for battery level. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S2\_BATTERY\_LOW@{S2\_BATTERY\_LOW}!BATTERY\_CHECK@{BATTERY\_CHECK}}\index{BATTERY\_CHECK@{BATTERY\_CHECK}!S2\_BATTERY\_LOW@{S2\_BATTERY\_LOW}}}\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2a6fd5d034e05dfe1a3f98d474c8f8a6fc}\label{class_b_a_t_t_e_r_y___c_h_e_c_k_ae999e6f209b67a67364d82a2820553a2a6fd5d034e05dfe1a3f98d474c8f8a6fc} 
+S2\+\_\+\+BATTERY\+\_\+\+LOW&Battery is below acceptable threshold. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_aed5ac8125ffc7805a9cf07b1544a488d}\index{BATTERY\_CHECK@{BATTERY\_CHECK}!BATTERY\_CHECK@{BATTERY\_CHECK}}
+\index{BATTERY\_CHECK@{BATTERY\_CHECK}!BATTERY\_CHECK@{BATTERY\_CHECK}}
+\doxysubsubsection{\texorpdfstring{BATTERY\_CHECK()}{BATTERY\_CHECK()}}
+{\footnotesize\ttfamily \label{class_b_a_t_t_e_r_y___c_h_e_c_k_aed5ac8125ffc7805a9cf07b1544a488d} 
+BATTERY\+\_\+\+CHECK\+::\+BATTERY\+\_\+\+CHECK (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_b_a_t_t_e_r_y___c_h_e_c_k}{BATTERY\+\_\+\+CHECK} class. 
+
+Initializes the FSM to the S0\+\_\+\+INIT state. 
+
+\label{doc-func-members}
+\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_b_a_t_t_e_r_y___c_h_e_c_k_a39b04b12471e7aae081fd1b457e70b98}\index{BATTERY\_CHECK@{BATTERY\_CHECK}!run@{run}}
+\index{run@{run}!BATTERY\_CHECK@{BATTERY\_CHECK}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_b_a_t_t_e_r_y___c_h_e_c_k_a39b04b12471e7aae081fd1b457e70b98} 
+void BATTERY\+\_\+\+CHECK\+::run (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Executes one iteration of the battery check FSM. 
+
+Reads ADC value and determines if battery is low.
+
+Uses ADC readings to determine battery voltage level. If voltage falls below a threshold (\texorpdfstring{$\sim$}{\string~}10.05V), an indicator LED is turned on. When the voltage rises above a recovery threshold (\texorpdfstring{$\sim$}{\string~}10.20V), the LED is turned off. This ensures that the LED won\textquotesingle{}t be constantly switching back and forth when the battery voltage decreases. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Inc/\mbox{\hyperlink{battery__check_8h}{battery\+\_\+check.\+h}}\item 
+Src/battery\+\_\+check.\+cpp\end{DoxyCompactItemize}

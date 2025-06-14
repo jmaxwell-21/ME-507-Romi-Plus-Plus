@@ -1,0 +1,25 @@
+\doxysection{Inc/bluetooth.h File Reference}
+\hypertarget{bluetooth_8h}{}\label{bluetooth_8h}\index{Inc/bluetooth.h@{Inc/bluetooth.h}}
+
+
+Bluetooth command handler for robot control.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h}{BLUETOOTH}}
+\begin{DoxyCompactList}\small\item\em Finite State Machine for Bluetooth-\/based control input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{bluetooth_8h_a63996c688e64a8523490c422fb8aa722}\label{bluetooth_8h_a63996c688e64a8523490c422fb8aa722} 
+int32\+\_\+t {\bfseries V}
+\begin{DoxyCompactList}\small\item\em Velocity setpoint (in encoder counts/sec) received via Bluetooth. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bluetooth command handler for robot control. 
+
+This file declares the \doxylink{class_b_l_u_e_t_o_o_t_h}{BLUETOOTH} class, which implements a finite state machine that processes commands received via a Bluetooth module (HC-\/05). It translates commands into motor setpoints for directional control. 

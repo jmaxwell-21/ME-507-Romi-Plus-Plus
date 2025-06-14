@@ -1,0 +1,26 @@
+\doxysection{Inc/battery\+\_\+check.h File Reference}
+\hypertarget{battery__check_8h}{}\label{battery__check_8h}\index{Inc/battery\_check.h@{Inc/battery\_check.h}}
+
+
+Header for the \doxylink{class_b_a_t_t_e_r_y___c_h_e_c_k}{BATTERY\+\_\+\+CHECK} class that monitors battery voltage of a 3S Li\+Po battery using the ADC.  
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_b_a_t_t_e_r_y___c_h_e_c_k}{BATTERY\+\_\+\+CHECK}}
+\begin{DoxyCompactList}\small\item\em A finite state machine for monitoring battery voltage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{battery__check_8h_a22b804736f5648d52f639b2647d4ed13}\label{battery__check_8h_a22b804736f5648d52f639b2647d4ed13} 
+ADC\+\_\+\+Handle\+Type\+Def {\bfseries hadc1}
+\begin{DoxyCompactList}\small\item\em External reference to the ADC handle used for battery sensing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for the \doxylink{class_b_a_t_t_e_r_y___c_h_e_c_k}{BATTERY\+\_\+\+CHECK} class that monitors battery voltage of a 3S Li\+Po battery using the ADC. 
+
+Defines a finite state machine that checks battery level and signals a low voltage condition using GPIO indicators. 

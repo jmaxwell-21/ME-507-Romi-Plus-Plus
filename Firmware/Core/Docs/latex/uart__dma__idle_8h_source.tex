@@ -1,0 +1,40 @@
+\doxysection{uart\+\_\+dma\+\_\+idle.\+h}
+\hypertarget{uart__dma__idle_8h_source}{}\label{uart__dma__idle_8h_source}\index{Inc/uart\_dma\_idle.h@{Inc/uart\_dma\_idle.h}}
+\mbox{\hyperlink{uart__dma__idle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ uart\_dma\_idle.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Jun\ 9,\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ jacka}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_UART\_DMA\_IDLE\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_UART\_DMA\_IDLE\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ BUFFER\_SIZE\ 64}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{command__parser_8h_a7859af7e1d2d58c1bc67f781bbfbe818}{rx\_buffer}}[\mbox{\hyperlink{command__parser_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}}];}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{command__parser_8h_a2359bfa4a10109d5dcc2e002cb8ece47}{buffer\_index}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ uint8\_t\ \mbox{\hyperlink{command__parser_8h_a6dcf3de33714573b301e5db87df1f4f9}{command\_ready}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uart__dma__idle_8h_a05a9aa3c7d6d9c513316cb3bc246c6db}{UART\_DMA\_IDLE\_Init}}(UART\_HandleTypeDef\ *huart);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{uart__dma__idle_8h_a9473c823f41276615e26ed3741652dc7}{UART\_DMA\_IDLE\_IRQHandler}}(UART\_HandleTypeDef\ *huart);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00050\ \}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_UART\_DMA\_IDLE\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

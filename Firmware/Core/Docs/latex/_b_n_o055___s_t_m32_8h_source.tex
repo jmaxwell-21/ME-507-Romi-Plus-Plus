@@ -1,0 +1,390 @@
+\doxysection{BNO055\+\_\+\+STM32.\+h}
+\hypertarget{_b_n_o055___s_t_m32_8h_source}{}\label{_b_n_o055___s_t_m32_8h_source}\index{Inc/BNO055\_STM32.h@{Inc/BNO055\_STM32.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ BNO055\_STM32.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Jun\ 5,\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ jacka}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \(\backslash\)copyright\ Copyright\ (c)\ 2024\ Afebia}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ \ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ \ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ \ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ \ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ \ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ \ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ \ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ \ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ \ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ \ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ \ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ \ SOFTWARE.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifndef\ INC\_BNO055\_STM32\_H\_}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ INC\_BNO055\_STM32\_H\_}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{extern}\ I2C\_HandleTypeDef\ hi2c1;}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ bno\_i2c\ (hi2c1)}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ P\_BNO055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x29<<1)\ \ \ \ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ BNO055\_ID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xA0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*===========================================================================================================================*/}}
+\DoxyCodeLine{00049\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *[Page\ 0\ Register\ Addresses\ Macro\ Definition]*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00050\ \textcolor{comment}{/*===========================================================================================================================*/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ \ \ \ \ \ Radius\ registers}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ MAG\_RADIUS\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x6A}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ MAG\_RADIUS\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x69}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ ACC\_RADIUS\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x68}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ ACC\_RADIUS\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x67}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ *\ \ Gyroscope\ offset\ register\ address\ macros}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ GYRO\_OFFSET\_Z\_MSB\_ADDR\ \ \ \ \ \ 0x66}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ GYRO\_OFFSET\_Z\_LSB\_ADDR\ \ \ \ \ \ 0x65}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ GYRO\_OFFSET\_Y\_MSB\_ADDR\ \ \ \ \ \ 0x64}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ GYRO\_OFFSET\_Y\_LSB\_ADDR\ \ \ \ \ \ 0x63}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ GYRO\_OFFSET\_X\_MSB\_ADDR\ \ \ \ \ \ 0x62}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ GYRO\_OFFSET\_X\_LSB\_ADDR\ \ \ \ \ \ 0x61}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *\ \ Magnetometer\ offset\ register\ address\ macros}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ MAG\_OFFSET\_Z\_MSB\_ADDR\ \ \ \ \ \ \ 0x60}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ MAG\_OFFSET\_Z\_LSB\_ADDR\ \ \ \ \ \ \ 0x5F}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ MAG\_OFFSET\_Y\_MSB\_ADDR\ \ \ \ \ \ \ 0x5E}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ MAG\_OFFSET\_Y\_LSB\_ADDR\ \ \ \ \ \ \ 0x5D}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ MAG\_OFFSET\_X\_MSB\_ADDR\ \ \ \ \ \ \ 0x5C}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ MAG\_OFFSET\_X\_LSB\_ADDR\ \ \ \ \ \ \ 0x5B}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ *\ \ Accelerometer\ offset\ register\ address\ macros}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ ACC\_OFFSET\_Z\_MSB\_ADDR\ \ \ \ \ \ \ 0x5A}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ ACC\_OFFSET\_Z\_LSB\_ADDR\ \ \ \ \ \ \ 0x59}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ ACC\_OFFSET\_Y\_MSB\_ADDR\ \ \ \ \ \ \ 0x58}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ ACC\_OFFSET\_Y\_LSB\_ADDR\ \ \ \ \ \ \ 0x57}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ ACC\_OFFSET\_X\_MSB\_ADDR\ \ \ \ \ \ \ 0x56}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ ACC\_OFFSET\_X\_LSB\_ADDR\ \ \ \ \ \ \ 0x55}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ AXIS\_MAP\_SIGN\_ADDR\ \ \ \ \ \ \ \ \ \ 0x42\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ AXIS\_MAP\_CONFIG\_ADDR\ \ \ \ \ \ \ \ 0x41\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ TEMP\_SOURCE\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ 0x40\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ SYS\_TRIGGER\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ 0x3F\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ PWR\_MODE\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3E\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ OPR\_MODE\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3D\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ UNIT\_SEL\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3B\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ SYS\_ERR\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3A\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ SYS\_STATUS\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ 0x39\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ SYS\_CLK\_STATUS\_ADDR\ \ \ \ \ \ \ \ \ 0x38\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ INT\_STA\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x37}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ ST\_RESULT\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x36\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ CALIB\_STAT\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ 0x35\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ TEMP\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x34\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ *\ Address\ macros\ of\ gravity\ vector\ data\ output\ registers}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ Note:\ Read-\/only\ register\ access}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ GRV\_DATA\_Z\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x33}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ GRV\_DATA\_Z\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x32}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ GRV\_DATA\_Y\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x31}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ GRV\_DATA\_Y\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x30}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ GRV\_DATA\_X\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x2F}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ GRV\_DATA\_X\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x2E}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ GRV\_DATA\_BASEADDR\ \ \ \ \ \ \ \ \ \ \ GRV\_DATA\_X\_LSB\_ADDR}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\ *\ Address\ macros\ of\ linear\ acceleration\ data\ output\ registers}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ *\ Note:\ Read-\/only\ register\ access}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ LIA\_DATA\_Z\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x2D}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ LIA\_DATA\_Z\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x2C}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LIA\_DATA\_Y\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x2B}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ LIA\_DATA\_Y\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x2A}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ LIA\_DATA\_X\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x29}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ LIA\_DATA\_X\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x28}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ LIA\_DATA\_BASEADDR\ \ \ \ \ \ \ \ \ \ \ LIA\_DATA\_X\_LSB\_ADDR}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ *\ Address\ macros\ of\ quaternion\ data\ output\ registers}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ *\ Note:\ Read-\/only\ register\ access}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ QUA\_DATA\_Z\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x27}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ QUA\_DATA\_Z\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x26}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ QUA\_DATA\_Y\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x25}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ QUA\_DATA\_Y\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x24}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ QUA\_DATA\_X\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x23}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ QUA\_DATA\_X\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x22}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ QUA\_DATA\_W\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x21}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ QUA\_DATA\_W\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ QUA\_DATA\_BASEADDR\ \ \ \ \ \ \ \ \ \ \ QUA\_DATA\_W\_LSB\_ADDR}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00147\ \textcolor{comment}{\ *\ Address\ macros\ of\ euler\ data\ output\ registers}}
+\DoxyCodeLine{00148\ \textcolor{comment}{\ *\ Note:\ Read-\/only\ register\ access}}
+\DoxyCodeLine{00149\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ EUL\_PITCH\_MSB\_ADDR\ \ \ \ \ \ \ \ \ \ 0x1F}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ EUL\_PITCH\_LSB\_ADDR\ \ \ \ \ \ \ \ \ \ 0x1E}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ EUL\_ROLL\_MSB\_ADDR\ \ \ \ \ \ \ \ \ \ \ 0x1D}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ EUL\_ROLL\_LSB\_ADDR\ \ \ \ \ \ \ \ \ \ \ 0x1C}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ EUL\_HEADING\_MSB\_ADDR\ \ \ \ \ \ \ \ 0x1B}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ EUL\_HEADING\_LSB\_ADDR\ \ \ \ \ \ \ \ 0x1A}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ EUL\_DATA\_BASEADDR\ \ \ \ \ \ \ \ \ \ \ EUL\_HEADING\_LSB\_ADDR}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00159\ \textcolor{comment}{\ *\ Address\ macros\ of\ gyroscope\ data\ output\ registers}}
+\DoxyCodeLine{00160\ \textcolor{comment}{\ *\ Note:\ Read-\/only\ register\ access}}
+\DoxyCodeLine{00161\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ GYRO\_DATA\_Z\_MSB\_ADDR\ \ \ \ \ \ \ \ 0x19}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ GYRO\_DATA\_Z\_LSB\_ADDR\ \ \ \ \ \ \ \ 0x18}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ GYRO\_DATA\_Y\_MSB\_ADDR\ \ \ \ \ \ \ \ 0x17}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ GYRO\_DATA\_Y\_LSB\_ADDR\ \ \ \ \ \ \ \ 0x16}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ GYRO\_DATA\_X\_MSB\_ADDR\ \ \ \ \ \ \ \ 0x15}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ GYRO\_DATA\_X\_LSB\_ADDR\ \ \ \ \ \ \ \ 0x14}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ GYRO\_DATA\_BASEADDR\ \ \ \ \ \ \ \ \ \ GYRO\_DATA\_X\_LSB\_ADDR}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ *\ Address\ macros\ of\ magnetometer\ data\ output\ registers}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ *\ Note:\ Read-\/only\ register\ access}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ MAG\_DATA\_Z\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x13}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ MAG\_DATA\_Z\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ MAG\_DATA\_Y\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ MAG\_DATA\_Y\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ MAG\_DATA\_X\_MSB\_ADDR\ \ \ \ \ \ \ \ \ 0x0F}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ MAG\_DATA\_X\_LSB\_ADDR\ \ \ \ \ \ \ \ \ 0x0E}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ MAG\_DATA\_BASEADDR\ \ \ \ \ \ \ \ \ \ \ MAG\_DATA\_X\_LSB\_ADDR}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00183\ \textcolor{comment}{\ *\ Address\ macros\ of\ accelerometer\ data\ output\ registers}}
+\DoxyCodeLine{00184\ \textcolor{comment}{\ *\ Note:\ Read-\/only\ register\ access}}
+\DoxyCodeLine{00185\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ ACCEL\_DATA\_Z\_MSB\_ADDR\ \ \ \ \ \ \ 0x0D}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ ACCEL\_DATA\_Z\_LSB\_ADDR\ \ \ \ \ \ \ 0x0C}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ ACCEL\_DATA\_Y\_MSB\_ADDR\ \ \ \ \ \ \ 0x0B}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ ACCEL\_DATA\_Y\_LSB\_ADDR\ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ ACCEL\_DATA\_X\_MSB\_ADDR\ \ \ \ \ \ \ 0x09}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ ACCEL\_DATA\_X\_LSB\_ADDR\ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ ACCEL\_DATA\_BASEADDR\ \ \ \ \ ACCEL\_DATA\_X\_LSB\_ADDR}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00195\ \textcolor{comment}{\ *\ Address\ macros\ of\ register\ which\ contains\ various\ ID\ parameters}}
+\DoxyCodeLine{00196\ \textcolor{comment}{\ *\ Note:\ Read-\/only\ register\ access}}
+\DoxyCodeLine{00197\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ PAGE\_ID\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ BL\_REV\_ID\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x06\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ SW\_REV\_ID\_MSB\_ADDR\ \ \ \ \ \ \ \ \ \ 0x05\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ SW\_REV\_ID\_LSB\_ADDR\ \ \ \ \ \ \ \ \ \ 0x04\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ GYR\_ID\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x03\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ MAG\_ID\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ ACC\_ID\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ CHIP\_ID\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{comment}{/*===========================================================================================================================*/}}
+\DoxyCodeLine{00208\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *[\ Page\ 1\ Register\ Addresses\ Macro\ Definition]*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00209\ \textcolor{comment}{/*===========================================================================================================================*/}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00212\ \textcolor{comment}{\ *\ NOTE:\ All\ page\ 1\ registers\ have\ read-\/only\ access}}
+\DoxyCodeLine{00213\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ UNIQUE\_ID\_BASEADDR\ \ \ \ \ \ \ \ \ \ 0x50\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ GYR\_AM\_SET\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ 0x1F\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ GYR\_AM\_THRES\_ADDR\ \ \ \ \ \ \ \ \ \ \ 0x1E\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ GYR\_DUR\_Z\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1D\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ GYR\_HR\_Z\_SET\_ADDR\ \ \ \ \ \ \ \ \ \ \ 0x1C\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ GYR\_DUR\_Y\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1B\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ GYR\_HR\_Y\_SET\_ADDR\ \ \ \ \ \ \ \ \ \ \ 0x1A\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ GYR\_DUR\_X\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x19\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ GYR\_HR\_X\_SET\_ADDR\ \ \ \ \ \ \ \ \ \ \ 0x18\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ GYR\_INT\_SETING\_ADDR\ \ \ \ \ \ \ \ \ 0x17\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ ACC\_NM\_SET\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ 0x16\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ ACC\_NM\_THRES\_ADDR\ \ \ \ \ \ \ \ \ \ \ 0x15\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ ACC\_HG\_THRES\_ADDR\ \ \ \ \ \ \ \ \ \ \ 0x14\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ ACC\_HG\_DURATION\_ADDR\ \ \ \ \ \ \ \ 0x13\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ ACC\_INT\_Setting\_ADDR\ \ \ \ \ \ \ \ 0x12\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ ACC\_AM\_THRES\_ADDR\ \ \ \ \ \ \ \ \ \ \ 0x11\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ INT\_EN\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ INT\_MSK\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0F\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ GYR\_Sleep\_Config\_ADDR\ \ \ \ \ \ \ 0x0D\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ ACC\_Sleep\_Config\_ADDR\ \ \ \ \ \ \ 0x0C\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ GYRO\_CONFIG\_1\_ADDR\ \ \ \ \ \ \ \ \ \ 0x0B\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ GYRO\_CONFIG\_0\_ADDR\ \ \ \ \ \ \ \ \ \ 0x0A\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ MAG\_CONFIG\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ 0x09\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ ACC\_CONFIG\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ 0x08\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00240\ \textcolor{comment}{\ *\ Page\ macros}}
+\DoxyCodeLine{00241\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ PAGE\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ PAGE\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00249\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00250\ \ \ \ \ uint8\_t\ STresult;\ \ \ \textcolor{comment}{//First\ 4\ bit[0:3]\ indicates\ self\ test\ resulst\ 3:ST\_MCU,\ 2:ST\_GYRO,\ 1:ST\_MAG,\ 0:ST\_ACCEL}}
+\DoxyCodeLine{00251\ \ \ \ \ uint8\_t\ SYSError;\ \ \ \textcolor{comment}{//Contains\ system\ error\ type\ If\ SYSStatus\ is\ System\_Error(0x01)}}
+\DoxyCodeLine{00252\ \ \ \ \ uint8\_t\ SYSStatus;}
+\DoxyCodeLine{00253\ \}\mbox{\hyperlink{struct_b_n_o___status__t}{BNO\_Status\_t}};}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00256\ \ \ \ \ uint8\_t\ System;}
+\DoxyCodeLine{00257\ \ \ \ \ uint8\_t\ Gyro;}
+\DoxyCodeLine{00258\ \ \ \ \ uint8\_t\ Acc;}
+\DoxyCodeLine{00259\ \ \ \ \ uint8\_t\ MAG;}
+\DoxyCodeLine{00260\ \}\mbox{\hyperlink{struct_calib__status__t}{Calib\_status\_t}};}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00266\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{\ \textcolor{comment}{//SENSOR\ DATA\ AXIS\ X,\ Y\ and\ Z}}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{float}\ X;}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{float}\ Y;}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{float}\ Z;}
+\DoxyCodeLine{00270\ \}\mbox{\hyperlink{struct_b_n_o055___data___x_y_z__t}{BNO055\_Data\_XYZ\_t}};}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{\ \textcolor{comment}{//SENSOR\ DATA\ AXIS\ W,\ X,\ Y\ and\ Z\ (Only\ for\ quaternion\ data)}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{float}\ W;}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{float}\ X;}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{float}\ Y;}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{float}\ Z;}
+\DoxyCodeLine{00277\ \}\mbox{\hyperlink{struct_b_n_o055___qua_data___w_x_y_z__t}{BNO055\_QuaData\_WXYZ\_t}};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{\ \textcolor{comment}{//SENSOR\ DATAS}}
+\DoxyCodeLine{00280\ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055___data___x_y_z__t}{BNO055\_Data\_XYZ\_t}}\ Accel;}
+\DoxyCodeLine{00281\ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055___data___x_y_z__t}{BNO055\_Data\_XYZ\_t}}\ Gyro;}
+\DoxyCodeLine{00282\ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055___data___x_y_z__t}{BNO055\_Data\_XYZ\_t}}\ Magneto;}
+\DoxyCodeLine{00283\ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055___data___x_y_z__t}{BNO055\_Data\_XYZ\_t}}\ Euler;}
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055___data___x_y_z__t}{BNO055\_Data\_XYZ\_t}}\ LineerAcc;}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055___data___x_y_z__t}{BNO055\_Data\_XYZ\_t}}\ Gravity;}
+\DoxyCodeLine{00286\ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055___qua_data___w_x_y_z__t}{BNO055\_QuaData\_WXYZ\_t}}\ Quaternion;}
+\DoxyCodeLine{00287\ \}\mbox{\hyperlink{struct_b_n_o055___sensors__t}{BNO055\_Sensors\_t}};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00290\ \ \ \ \ SENSOR\_GRAVITY\ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00291\ \ \ \ \ SENSOR\_QUATERNION\ \ =\ 0x02,}
+\DoxyCodeLine{00292\ \ \ \ \ SENSOR\_LINACC\ \ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00293\ \ \ \ \ SENSOR\_GYRO\ \ \ \ \ \ \ \ =\ 0x08,}
+\DoxyCodeLine{00294\ \ \ \ \ SENSOR\_ACCEL\ \ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00295\ \ \ \ \ SENSOR\_MAG\ \ \ \ \ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00296\ \ \ \ \ SENSOR\_EULER\ \ \ \ \ \ \ =\ 0x40,}
+\DoxyCodeLine{00297\ \}\ BNO055\_Sensor\_Type;}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \textcolor{comment}{//Base\ Addresses\ of\ output\ data\ register}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ BNO\_ACCEL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ACCEL\_DATA\_BASEADDR}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ BNO\_GYRO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GYRO\_DATA\_BASEADDR}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ BNO\_MAG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAG\_DATA\_BASEADDR}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ BNO\_EULER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUL\_DATA\_BASEADDR}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ BNO\_LINACC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LIA\_DATA\_BASEADDR}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ BNO\_GRAVITY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GRV\_DATA\_BASEADDR}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ BNO\_QUATERNION\ \ \ \ \ \ \ \ \ \ \ \ \ \ QUA\_DATA\_BASEADDR}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00312\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00313\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ uint8\_t\ Unit\_Sel;}
+\DoxyCodeLine{00315\ \ \ \ \ uint8\_t\ Axis;}
+\DoxyCodeLine{00316\ \ \ \ \ uint8\_t\ Axis\_sign;}
+\DoxyCodeLine{00317\ \ \ \ \ uint8\_t\ Mode;}
+\DoxyCodeLine{00318\ \ \ \ \ uint8\_t\ OP\_Modes;}
+\DoxyCodeLine{00319\ \ \ \ \ uint8\_t\ Clock\_Source;}
+\DoxyCodeLine{00320\ \ \ \ \ uint8\_t\ ACC\_Range;}
+\DoxyCodeLine{00321\ \}\mbox{\hyperlink{struct_b_n_o055___init__t}{BNO055\_Init\_t}};}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{\textcolor{comment}{//\ OPERATION\ MODES}}
+\DoxyCodeLine{00324\ \ \ \ \ CONFIG\_MODE\ =0x00,\ \ \ \ \ \ \textcolor{comment}{//This\ is\ the\ only\ mode\ in\ which\ all\ the\ writable\ register\ map\ entries\ can\ be\ changed\ (Except\ INT\ ,\ INT\_MASK,\ OPR\_MODE)}}
+\DoxyCodeLine{00325\ \ \ \ \ ACC\_ONLY\ =0x01,}
+\DoxyCodeLine{00326\ \ \ \ \ MAG\_ONLY\ =0x02,}
+\DoxyCodeLine{00327\ \ \ \ \ GYRO\_ONLY\ =0x03,}
+\DoxyCodeLine{00328\ \ \ \ \ ACC\_MAG\ =0x04,}
+\DoxyCodeLine{00329\ \ \ \ \ ACC\_GYRO\ =0x05,}
+\DoxyCodeLine{00330\ \ \ \ \ MAG\_GYRO\ =0x06,}
+\DoxyCodeLine{00331\ \ \ \ \ AMG=\ 0x07,}
+\DoxyCodeLine{00332\ \ \ \ \ IMU=\ 0x08,}
+\DoxyCodeLine{00333\ \ \ \ \ COMPASS\ =0x09,}
+\DoxyCodeLine{00334\ \ \ \ \ M4G=\ 0x0A,}
+\DoxyCodeLine{00335\ \ \ \ \ NDOF\_FMC\_OFF\ =0x0B,}
+\DoxyCodeLine{00336\ \ \ \ \ NDOF=\ 0x0C}
+\DoxyCodeLine{00337\ \}Op\_Modes\_t;}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ BNO055\_NORMAL\_MODE\ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ BNO055\_LOWPOWER\_MODE\ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ BNO055\_SUSPEND\_MODE\ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ DEFAULT\_AXIS\_REMAP\ \ \ \ \ \ \ \ \ \ 0x24}}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ DEFAULT\_AXIS\_SIGN\ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ CLOCK\_EXTERNAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1\ <<\ 7)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ CLOCK\_INTERNAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0\ <<\ 7)}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00350\ \textcolor{comment}{\ *\ UNIT\_SELECT\ register\ macros\ definition}}
+\DoxyCodeLine{00351\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ UNIT\_ORI\_ANDROID\ \ \ \ \ \ \ \ \ \ \ \ (1\ <<\ 7)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ UNIT\_ORI\_WINDOWS\ \ \ \ \ \ \ \ \ \ \ \ (0\ <<\ 7)}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ UNIT\_TEMP\_CELCIUS\ \ \ \ \ \ \ \ \ \ \ (0\ <<\ 4)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ UNIT\_TEMP\_FAHRENHEIT\ \ \ \ \ \ \ \ (1\ <<\ 4)}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ UNIT\_EUL\_DEG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0\ <<\ 2)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ UNIT\_EUL\_RAD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1\ <<\ 2)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ UNIT\_GYRO\_DPS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0\ <<\ 1)}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ UNIT\_GYRO\_RPS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1\ <<\ 1)}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ UNIT\_ACC\_MS2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0\ <<\ 0)}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ UNIT\_ACC\_MG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1\ <<\ 0)}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00364\ \textcolor{comment}{\ *\ ACCEL\ range\ macros\ definition\ for\ ACC\_CONFIG\ register}}
+\DoxyCodeLine{00365\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ Range\_2G\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ Range\_4G\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ Range\_8G\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ Range\_16G\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x03}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00372\ \textcolor{comment}{\ *\ BNO055\ library\ function\ declaration}}
+\DoxyCodeLine{00373\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00374\ \textcolor{keywordtype}{void}\ getCalibration(\mbox{\hyperlink{struct_calib__status__t}{Calib\_status\_t}}\ *calib);}
+\DoxyCodeLine{00375\ Op\_Modes\_t\ getCurrentMode(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00376\ \textcolor{keywordtype}{bool}\ isFullyCalibrated(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00377\ \textcolor{keywordtype}{void}\ setSensorOffsets(\textcolor{keyword}{const}\ uint8\_t\ *calibData)\ ;}
+\DoxyCodeLine{00378\ \textcolor{keywordtype}{void}\ getSensorOffsets(uint8\_t\ *calibData);}
+\DoxyCodeLine{00379\ \textcolor{keywordtype}{bool}\ Calibrate\_BNO055(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \textcolor{keywordtype}{void}\ Set\_Operation\_Mode(Op\_Modes\_t\ Mode);}
+\DoxyCodeLine{00382\ \textcolor{keywordtype}{void}\ Clock\_Source(uint8\_t\ source);}
+\DoxyCodeLine{00383\ \textcolor{keywordtype}{void}\ SetPowerMODE(uint8\_t\ BNO055\_);}
+\DoxyCodeLine{00384\ \textcolor{keywordtype}{void}\ BNO055\_Axis(uint8\_t\ remap,\ uint8\_t\ sign);}
+\DoxyCodeLine{00385\ \textcolor{keywordtype}{void}\ SelectPage(uint8\_t\ page);}
+\DoxyCodeLine{00386\ \textcolor{keywordtype}{void}\ SET\_Accel\_Range(uint8\_t\ range);}
+\DoxyCodeLine{00387\ \textcolor{keywordtype}{void}\ BNO055\_Init(\mbox{\hyperlink{struct_b_n_o055___init__t}{BNO055\_Init\_t}}\ Init);}
+\DoxyCodeLine{00388\ \textcolor{keywordtype}{void}\ ReadData(\mbox{\hyperlink{struct_b_n_o055___sensors__t}{BNO055\_Sensors\_t}}\ *sensorData,BNO055\_Sensor\_Type\ sensors);}
+\DoxyCodeLine{00389\ \textcolor{keywordtype}{void}\ Check\_Status(\mbox{\hyperlink{struct_b_n_o___status__t}{BNO\_Status\_t}}\ *result);}
+\DoxyCodeLine{00390\ \textcolor{keywordtype}{void}\ ResetBNO055(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_BNO055\_STM32\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00396\ \}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

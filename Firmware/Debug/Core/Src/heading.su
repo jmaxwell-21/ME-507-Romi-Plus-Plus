@@ -1,0 +1,4 @@
+../Core/Src/heading.cpp:14:1:HEADING::HEADING()	16	static
+../Core/Src/heading.cpp:23:9:int32_t HEADING::get_M1_eff()	16	static
+../Core/Src/heading.cpp:29:9:int32_t HEADING::get_M2_eff()	16	static
+../Core/Src/heading.cpp:36:6:void HEADING::run()	16	static

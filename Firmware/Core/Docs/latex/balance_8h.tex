@@ -1,0 +1,31 @@
+\doxysection{Inc/balance.h File Reference}
+\hypertarget{balance_8h}{}\label{balance_8h}\index{Inc/balance.h@{Inc/balance.h}}
+
+
+Declaration of the \doxylink{class_b_a_l_a_n_c_e}{BALANCE} class for managing robot balance using a FSM.  
+
+
+{\ttfamily \#include "{}BNO055\+\_\+\+STM32.\+h"{}}\newline
+{\ttfamily \#include "{}time\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_b_a_l_a_n_c_e}{BALANCE}}
+\begin{DoxyCompactList}\small\item\em Finite State Machine class for robot balance control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{balance_8h_a7871395ef24115844178e306695a6b39}\label{balance_8h_a7871395ef24115844178e306695a6b39} 
+\mbox{\hyperlink{struct_b_n_o055___sensors__t}{BNO055\+\_\+\+Sensors\+\_\+t}} {\bfseries BNO055}
+\begin{DoxyCompactList}\small\item\em External reference to BNO055 sensor data structure. \end{DoxyCompactList}\item 
+\Hypertarget{balance_8h_a59cc8776b62c3d309d2ceafcfbfa504c}\label{balance_8h_a59cc8776b62c3d309d2ceafcfbfa504c} 
+volatile bool {\bfseries USER}
+\begin{DoxyCompactList}\small\item\em External flag indicating user button press. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{class_b_a_l_a_n_c_e}{BALANCE} class for managing robot balance using a FSM. 
+
+This header defines a finite state machine (FSM) class for maintaining balance of a differential drive robot using BNO055 IMU data. It includes PID control logic and internal state tracking. 

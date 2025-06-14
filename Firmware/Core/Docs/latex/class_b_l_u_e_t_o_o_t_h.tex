@@ -1,0 +1,173 @@
+\doxysection{BLUETOOTH Class Reference}
+\hypertarget{class_b_l_u_e_t_o_o_t_h}{}\label{class_b_l_u_e_t_o_o_t_h}\index{BLUETOOTH@{BLUETOOTH}}
+
+
+Finite State Machine for Bluetooth-\/based control input.  
+
+
+
+
+{\ttfamily \#include $<$bluetooth.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaab}{state}} \{ \newline
+\mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba5e6556fb01651b2784e95fe950a52bff}{S0\+\_\+\+INIT}}
+, \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba43bc715cf2aa2c29476be4aef536d93e}{S1\+\_\+\+STOP}}
+, \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba880bcd4eb97b1b9eaa71f9b52ae6b575}{SF\+\_\+\+FORWARD}}
+, \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba83bac40782ab56bfcfd190c7045f2a77}{SB\+\_\+\+BACKWARD}}
+, \newline
+\mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaabae4767c324d5d0318b7c9a96b73ee43ec}{SR\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba76150d75739445d23ac7b8db6cce155f}{SL\+\_\+\+LEFT}}
+ \}
+\item 
+\Hypertarget{class_b_l_u_e_t_o_o_t_h_a1a2909e12b3b84ab185b3e4f33e7f444}\label{class_b_l_u_e_t_o_o_t_h_a1a2909e12b3b84ab185b3e4f33e7f444} 
+typedef enum \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaab}{BLUETOOTH\+::state}} {\bfseries state\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_a4c603cf2de31a7476ea707a4c565ec0e}{BLUETOOTH}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_b_l_u_e_t_o_o_t_h}{BLUETOOTH} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_a627eec7faa7dfb4b6f130b2cd8989cf5}{run}} (void)
+\begin{DoxyCompactList}\small\item\em Executes one iteration of the Bluetooth FSM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_a10cbb488347bcf5eae1ef73fb92c2ebf}{set\+\_\+command}} (char cmd)
+\begin{DoxyCompactList}\small\item\em Sets the most recent command character received over Bluetooth. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_a2d9251d66a084e7f839970e91714431c}{get\+\_\+\+M1\+\_\+set}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the motor 1 setpoint based on last command. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_aa335d59079b37dbd8d99f7e253c373e6}{get\+\_\+\+M2\+\_\+set}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the motor 2 setpoint based on last command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Finite State Machine for Bluetooth-\/based control input. 
+
+Converts ASCII command characters received via UART into motor setpoints for directional movement. 
+
+\label{doc-enum-members}
+\Hypertarget{class_b_l_u_e_t_o_o_t_h_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaab}\index{BLUETOOTH@{BLUETOOTH}!state@{state}}
+\index{state@{state}!BLUETOOTH@{BLUETOOTH}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaab} 
+enum \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaab}{BLUETOOTH\+::state}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S0\_INIT@{S0\_INIT}!BLUETOOTH@{BLUETOOTH}}\index{BLUETOOTH@{BLUETOOTH}!S0\_INIT@{S0\_INIT}}}\Hypertarget{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba5e6556fb01651b2784e95fe950a52bff}\label{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba5e6556fb01651b2784e95fe950a52bff} 
+S0\+\_\+\+INIT&Initialization state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S1\_STOP@{S1\_STOP}!BLUETOOTH@{BLUETOOTH}}\index{BLUETOOTH@{BLUETOOTH}!S1\_STOP@{S1\_STOP}}}\Hypertarget{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba43bc715cf2aa2c29476be4aef536d93e}\label{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba43bc715cf2aa2c29476be4aef536d93e} 
+S1\+\_\+\+STOP&Stop motors. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SF\_FORWARD@{SF\_FORWARD}!BLUETOOTH@{BLUETOOTH}}\index{BLUETOOTH@{BLUETOOTH}!SF\_FORWARD@{SF\_FORWARD}}}\Hypertarget{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba880bcd4eb97b1b9eaa71f9b52ae6b575}\label{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba880bcd4eb97b1b9eaa71f9b52ae6b575} 
+SF\+\_\+\+FORWARD&Move forward. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SB\_BACKWARD@{SB\_BACKWARD}!BLUETOOTH@{BLUETOOTH}}\index{BLUETOOTH@{BLUETOOTH}!SB\_BACKWARD@{SB\_BACKWARD}}}\Hypertarget{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba83bac40782ab56bfcfd190c7045f2a77}\label{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba83bac40782ab56bfcfd190c7045f2a77} 
+SB\+\_\+\+BACKWARD&Move backward. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SR\_RIGHT@{SR\_RIGHT}!BLUETOOTH@{BLUETOOTH}}\index{BLUETOOTH@{BLUETOOTH}!SR\_RIGHT@{SR\_RIGHT}}}\Hypertarget{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaabae4767c324d5d0318b7c9a96b73ee43ec}\label{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaabae4767c324d5d0318b7c9a96b73ee43ec} 
+SR\+\_\+\+RIGHT&Turn right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SL\_LEFT@{SL\_LEFT}!BLUETOOTH@{BLUETOOTH}}\index{BLUETOOTH@{BLUETOOTH}!SL\_LEFT@{SL\_LEFT}}}\Hypertarget{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba76150d75739445d23ac7b8db6cce155f}\label{class_b_l_u_e_t_o_o_t_h_ab9b7360588b84e72dfb69fa4a248eaaba76150d75739445d23ac7b8db6cce155f} 
+SL\+\_\+\+LEFT&Turn left. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_b_l_u_e_t_o_o_t_h_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_b_l_u_e_t_o_o_t_h_a4c603cf2de31a7476ea707a4c565ec0e}\index{BLUETOOTH@{BLUETOOTH}!BLUETOOTH@{BLUETOOTH}}
+\index{BLUETOOTH@{BLUETOOTH}!BLUETOOTH@{BLUETOOTH}}
+\doxysubsubsection{\texorpdfstring{BLUETOOTH()}{BLUETOOTH()}}
+{\footnotesize\ttfamily \label{class_b_l_u_e_t_o_o_t_h_a4c603cf2de31a7476ea707a4c565ec0e} 
+BLUETOOTH\+::\+BLUETOOTH (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_b_l_u_e_t_o_o_t_h}{BLUETOOTH} class. 
+
+Initializes the FSM to the S0\+\_\+\+INIT state and motor setpoints to zero. 
+
+\label{doc-func-members}
+\Hypertarget{class_b_l_u_e_t_o_o_t_h_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_b_l_u_e_t_o_o_t_h_a2d9251d66a084e7f839970e91714431c}\index{BLUETOOTH@{BLUETOOTH}!get\_M1\_set@{get\_M1\_set}}
+\index{get\_M1\_set@{get\_M1\_set}!BLUETOOTH@{BLUETOOTH}}
+\doxysubsubsection{\texorpdfstring{get\_M1\_set()}{get\_M1\_set()}}
+{\footnotesize\ttfamily \label{class_b_l_u_e_t_o_o_t_h_a2d9251d66a084e7f839970e91714431c} 
+int16\+\_\+t BLUETOOTH\+::get\+\_\+\+M1\+\_\+set (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the motor 1 setpoint based on last command. 
+
+Retrieves the setpoint for motor 1.
+
+\begin{DoxyReturn}{Returns}
+Signed 16-\/bit motor setpoint value for motor 1.
+
+Motor 1 velocity setpoint. 
+\end{DoxyReturn}
+\Hypertarget{class_b_l_u_e_t_o_o_t_h_aa335d59079b37dbd8d99f7e253c373e6}\index{BLUETOOTH@{BLUETOOTH}!get\_M2\_set@{get\_M2\_set}}
+\index{get\_M2\_set@{get\_M2\_set}!BLUETOOTH@{BLUETOOTH}}
+\doxysubsubsection{\texorpdfstring{get\_M2\_set()}{get\_M2\_set()}}
+{\footnotesize\ttfamily \label{class_b_l_u_e_t_o_o_t_h_aa335d59079b37dbd8d99f7e253c373e6} 
+int16\+\_\+t BLUETOOTH\+::get\+\_\+\+M2\+\_\+set (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the motor 2 setpoint based on last command. 
+
+Retrieves the setpoint for motor 2.
+
+\begin{DoxyReturn}{Returns}
+Signed 16-\/bit motor setpoint value for motor 2.
+
+Motor 2 velocity setpoint. 
+\end{DoxyReturn}
+\Hypertarget{class_b_l_u_e_t_o_o_t_h_a627eec7faa7dfb4b6f130b2cd8989cf5}\index{BLUETOOTH@{BLUETOOTH}!run@{run}}
+\index{run@{run}!BLUETOOTH@{BLUETOOTH}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_b_l_u_e_t_o_o_t_h_a627eec7faa7dfb4b6f130b2cd8989cf5} 
+void BLUETOOTH\+::run (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Executes one iteration of the Bluetooth FSM. 
+
+Updates motor setpoints based on current state and command.
+
+Translates command characters into motor setpoints by updating internal FSM state. \Hypertarget{class_b_l_u_e_t_o_o_t_h_a10cbb488347bcf5eae1ef73fb92c2ebf}\index{BLUETOOTH@{BLUETOOTH}!set\_command@{set\_command}}
+\index{set\_command@{set\_command}!BLUETOOTH@{BLUETOOTH}}
+\doxysubsubsection{\texorpdfstring{set\_command()}{set\_command()}}
+{\footnotesize\ttfamily \label{class_b_l_u_e_t_o_o_t_h_a10cbb488347bcf5eae1ef73fb92c2ebf} 
+void BLUETOOTH\+::set\+\_\+command (\begin{DoxyParamCaption}\item[{char}]{cmd}{}\end{DoxyParamCaption})}
+
+
+
+Sets the most recent command character received over Bluetooth. 
+
+Sets the most recent command received via Bluetooth.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & Single character representing a motion command.\\
+\hline
+{\em cmd} & Single ASCII character representing the command\+: \textquotesingle{}F\textquotesingle{} = forward, \textquotesingle{}B\textquotesingle{} = backward, \textquotesingle{}L\textquotesingle{} = left, \textquotesingle{}R\textquotesingle{} = right, \textquotesingle{}S\textquotesingle{} = stop. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Inc/\mbox{\hyperlink{bluetooth_8h}{bluetooth.\+h}}\item 
+Src/bluetooth.\+cpp\end{DoxyCompactItemize}

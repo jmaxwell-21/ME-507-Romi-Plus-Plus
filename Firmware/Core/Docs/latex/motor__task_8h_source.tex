@@ -1,0 +1,103 @@
+\doxysection{motor\+\_\+task.\+h}
+\hypertarget{motor__task_8h_source}{}\label{motor__task_8h_source}\index{Inc/motor\_task.h@{Inc/motor\_task.h}}
+\mbox{\hyperlink{motor__task_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ motor\_task.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Jun\ 2,\ 2025}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ jacka}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_MOTOR\_TASK\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_MOTOR\_TASK\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{motor__driver_8h}{motor\_driver.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{encoder_8h}{encoder.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bluetooth_8h}{bluetooth.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command__parser_8h}{command\_parser.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{heading_8h}{heading.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{balance_8h}{balance.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{time__utils_8h}{time\_utils.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ TIM\_HandleTypeDef\ \mbox{\hyperlink{motor__task_8h_a25fc663547539bc49fecc0011bd76ab5}{htim1}};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{extern}\ TIM\_HandleTypeDef\ \mbox{\hyperlink{motor__task_8h_aac3d2c59ee0e3bbae1b99529a154eb62}{htim3}};}
+\DoxyCodeLine{00034\ \textcolor{keyword}{extern}\ TIM\_HandleTypeDef\ \mbox{\hyperlink{motor__task_8h_a85788cec5a97ee377e4ee2e74f026484}{htim4}};}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ TIM\_HandleTypeDef\ \mbox{\hyperlink{motor__task_8h_acefaeaaa3856ddddae7083b2d220fe4b}{htim5}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_b_l_u_e_t_o_o_t_h}{BLUETOOTH}}\ \mbox{\hyperlink{motor__task_8h_a9b790b620dceefcde3befffb66864e08}{bluetooth}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{extern}\ COMMAND\_PARSER\ \mbox{\hyperlink{heading_8h_a166d58d7e5b485f50b066bb572d4e52d}{parser}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_h_e_a_d_i_n_g}{HEADING}}\ \mbox{\hyperlink{motor__task_8h_ac620a20633fa0122af674367e4ea4baa}{heading}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_b_a_l_a_n_c_e}{BALANCE}}\ \mbox{\hyperlink{motor__task_8h_af3f7ab56056a228ea9e41b6a599ceaa3}{balance}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{extern}\ int32\_t\ \mbox{\hyperlink{motor__task_8h_ab6bdf79e02c3ccb3b22efe8fb44d1818}{AR}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_ae26d0eb531047dbe9138db9fdfa3e919}{MOTOR\_TASK}}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764e}{state}}}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eaef9cab90e249ed385da6f46cebea30a5}{S0\_INIT}},\ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eae176dfa4e642ce0fdebe3e2f3a8c637f}{S1\_IDLE}},\ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764eaa6081173e732510f654678a1c39eda63}{S2\_RUN}}\ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \}\ state\_t;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_ae26d0eb531047dbe9138db9fdfa3e919}{MOTOR\_TASK}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a5f7351d0feb13b529c1589a9e4108a49}{run}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \ \ \ \ state\_t\ \mbox{\hyperlink{class_m_o_t_o_r___t_a_s_k_a6d75db7139226796bf367ad21532764e}{state}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ should\_run();\ \ \ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Motor\ hardware\ abstraction}}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{structmotor__t}{motor\_t}}\ motor1;\ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{structmotor__t}{motor\_t}}\ motor2;\ \ \ \ \ \ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{float}\ M1\_eff;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ M2\_eff;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ int16\_t\ M1\_set;\ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ int16\_t\ M2\_set;\ \ \ \ \ \ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ Encoder\ feedback}}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{structencoder__t}{encoder\_t}}\ encoder1;\ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{structencoder__t}{encoder\_t}}\ encoder2;\ \ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ PID\ gains\ for\ motor\ 1}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{float}\ Kp1;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{float}\ Ki1;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{float}\ Kd1;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ PID\ state\ variables\ for\ motor\ 1}}
+\DoxyCodeLine{00108\ \ \ \ \ int32\_t\ error1;}
+\DoxyCodeLine{00109\ \ \ \ \ int32\_t\ prev\_error1;}
+\DoxyCodeLine{00110\ \ \ \ \ int32\_t\ error\_diff1;}
+\DoxyCodeLine{00111\ \ \ \ \ int32\_t\ error\_sum1;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ PID\ gains\ for\ motor\ 2}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{float}\ Kp2;}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{float}\ Ki2;}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{float}\ Kd2;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//\ PID\ state\ variables\ for\ motor\ 2}}
+\DoxyCodeLine{00119\ \ \ \ \ int32\_t\ error2;}
+\DoxyCodeLine{00120\ \ \ \ \ int32\_t\ prev\_error2;}
+\DoxyCodeLine{00121\ \ \ \ \ int32\_t\ error\_diff2;}
+\DoxyCodeLine{00122\ \ \ \ \ int32\_t\ error\_sum2;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ Timing\ variables}}
+\DoxyCodeLine{00125\ \ \ \ \ uint32\_t\ dt;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ uint32\_t\ now;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ uint32\_t\ last\_time;\ \ }
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_MOTOR\_TASK\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

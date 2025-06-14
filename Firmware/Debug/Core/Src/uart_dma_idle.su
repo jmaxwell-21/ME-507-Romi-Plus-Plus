@@ -1,0 +1,2 @@
+../Core/Src/uart_dma_idle.c:21:6:UART_DMA_IDLE_Init	16	static
+../Core/Src/uart_dma_idle.c:34:6:UART_DMA_IDLE_IRQHandler	32	static

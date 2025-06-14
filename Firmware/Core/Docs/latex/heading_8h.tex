@@ -1,0 +1,67 @@
+\doxysection{Inc/heading.h File Reference}
+\hypertarget{heading_8h}{}\label{heading_8h}\index{Inc/heading.h@{Inc/heading.h}}
+
+
+FSM class for heading-\/based robot control using IMU input.  
+
+
+{\ttfamily \#include "{}command\+\_\+parser.\+h"{}}\newline
+{\ttfamily \#include "{}BNO055\+\_\+\+STM32.\+h"{}}\newline
+{\ttfamily \#include "{}time\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_h_e_a_d_i_n_g}{HEADING}}
+\begin{DoxyCompactList}\small\item\em Finite State Machine for heading control based on IMU data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+COMMAND\+\_\+\+PARSER \mbox{\hyperlink{heading_8h_a166d58d7e5b485f50b066bb572d4e52d}{parser}}
+\begin{DoxyCompactList}\small\item\em External reference to the command parser. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_n_o055___sensors__t}{BNO055\+\_\+\+Sensors\+\_\+t}} \mbox{\hyperlink{heading_8h_a7871395ef24115844178e306695a6b39}{BNO055}}
+\begin{DoxyCompactList}\small\item\em External reference to BNO055 IMU data structure. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{heading_8h_a59cc8776b62c3d309d2ceafcfbfa504c}{USER}}
+\begin{DoxyCompactList}\small\item\em External flag triggered by user button press. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+FSM class for heading-\/based robot control using IMU input. 
+
+Defines a finite state machine for maintaining or adjusting the robot\textquotesingle{}s heading based on IMU data and a heading setpoint received via parser. 
+
+\label{doc-var-members}
+\Hypertarget{heading_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{heading_8h_a7871395ef24115844178e306695a6b39}\index{heading.h@{heading.h}!BNO055@{BNO055}}
+\index{BNO055@{BNO055}!heading.h@{heading.h}}
+\doxysubsubsection{\texorpdfstring{BNO055}{BNO055}}
+{\footnotesize\ttfamily \label{heading_8h_a7871395ef24115844178e306695a6b39} 
+\mbox{\hyperlink{struct_b_n_o055___sensors__t}{BNO055\+\_\+\+Sensors\+\_\+t}} BNO055\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+External reference to BNO055 IMU data structure. 
+
+External reference to BNO055 IMU data structure. \Hypertarget{heading_8h_a166d58d7e5b485f50b066bb572d4e52d}\index{heading.h@{heading.h}!parser@{parser}}
+\index{parser@{parser}!heading.h@{heading.h}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily \label{heading_8h_a166d58d7e5b485f50b066bb572d4e52d} 
+COMMAND\+\_\+\+PARSER parser\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+External reference to the command parser. 
+
+BNO055 data structure definition which hold euler, quaternion, linearaccel, gyro etc. parameters \Hypertarget{heading_8h_a59cc8776b62c3d309d2ceafcfbfa504c}\index{heading.h@{heading.h}!USER@{USER}}
+\index{USER@{USER}!heading.h@{heading.h}}
+\doxysubsubsection{\texorpdfstring{USER}{USER}}
+{\footnotesize\ttfamily \label{heading_8h_a59cc8776b62c3d309d2ceafcfbfa504c} 
+volatile bool USER\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+External flag triggered by user button press. 
+
+External flag triggered by user button press. 

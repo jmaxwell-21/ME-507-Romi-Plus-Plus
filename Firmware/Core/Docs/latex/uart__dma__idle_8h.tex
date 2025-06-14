@@ -1,0 +1,123 @@
+\doxysection{Inc/uart\+\_\+dma\+\_\+idle.h File Reference}
+\hypertarget{uart__dma__idle_8h}{}\label{uart__dma__idle_8h}\index{Inc/uart\_dma\_idle.h@{Inc/uart\_dma\_idle.h}}
+
+
+UART DMA with idle line detection handler.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{uart__dma__idle_8h_a6b20d41d6252e9871430c242cb1a56e7}\label{uart__dma__idle_8h_a6b20d41d6252e9871430c242cb1a56e7} 
+\#define {\bfseries BUFFER\+\_\+\+SIZE}~64
+\begin{DoxyCompactList}\small\item\em Maximum receive buffer size for UART DMA. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uart__dma__idle_8h_a05a9aa3c7d6d9c513316cb3bc246c6db}{UART\+\_\+\+DMA\+\_\+\+IDLE\+\_\+\+Init}} (UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}huart)
+\begin{DoxyCompactList}\small\item\em Initializes UART DMA reception with idle line detection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{uart__dma__idle_8h_a9473c823f41276615e26ed3741652dc7}{UART\+\_\+\+DMA\+\_\+\+IDLE\+\_\+\+IRQHandler}} (UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}huart)
+\begin{DoxyCompactList}\small\item\em UART interrupt handler for idle line detection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{uart__dma__idle_8h_a7859af7e1d2d58c1bc67f781bbfbe818}{rx\+\_\+buffer}} \mbox{[}\mbox{\hyperlink{command__parser_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em UART DMA receive buffer shared with command parser or control logic. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{uart__dma__idle_8h_a2359bfa4a10109d5dcc2e002cb8ece47}{buffer\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Current write index into the rx\+\_\+buffer. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{uart__dma__idle_8h_a6dcf3de33714573b301e5db87df1f4f9}{command\+\_\+ready}}
+\begin{DoxyCompactList}\small\item\em Flag set when a full command is received and ready to parse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+UART DMA with idle line detection handler. 
+
+Provides support for non-\/blocking UART reception using DMA with idle line interrupt to detect end-\/of-\/packet or message termination. 
+
+\label{doc-func-members}
+\Hypertarget{uart__dma__idle_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{uart__dma__idle_8h_a05a9aa3c7d6d9c513316cb3bc246c6db}\index{uart\_dma\_idle.h@{uart\_dma\_idle.h}!UART\_DMA\_IDLE\_Init@{UART\_DMA\_IDLE\_Init}}
+\index{UART\_DMA\_IDLE\_Init@{UART\_DMA\_IDLE\_Init}!uart\_dma\_idle.h@{uart\_dma\_idle.h}}
+\doxysubsubsection{\texorpdfstring{UART\_DMA\_IDLE\_Init()}{UART\_DMA\_IDLE\_Init()}}
+{\footnotesize\ttfamily \label{uart__dma__idle_8h_a05a9aa3c7d6d9c513316cb3bc246c6db} 
+void UART\+\_\+\+DMA\+\_\+\+IDLE\+\_\+\+Init (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{huart}{}\end{DoxyParamCaption})}
+
+
+
+Initializes UART DMA reception with idle line detection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & Pointer to UART handle configured for DMA RX.\\
+\hline
+\end{DoxyParams}
+Initializes UART DMA reception with idle line detection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & Pointer to the UART handle to configure.\\
+\hline
+\end{DoxyParams}
+Starts the DMA reception and enables UART idle line detection to trigger when a message has ended. Assumes a \textquotesingle{}\textbackslash{}r~\newline
+\textquotesingle{} terminated protocol. \Hypertarget{uart__dma__idle_8h_a9473c823f41276615e26ed3741652dc7}\index{uart\_dma\_idle.h@{uart\_dma\_idle.h}!UART\_DMA\_IDLE\_IRQHandler@{UART\_DMA\_IDLE\_IRQHandler}}
+\index{UART\_DMA\_IDLE\_IRQHandler@{UART\_DMA\_IDLE\_IRQHandler}!uart\_dma\_idle.h@{uart\_dma\_idle.h}}
+\doxysubsubsection{\texorpdfstring{UART\_DMA\_IDLE\_IRQHandler()}{UART\_DMA\_IDLE\_IRQHandler()}}
+{\footnotesize\ttfamily \label{uart__dma__idle_8h_a9473c823f41276615e26ed3741652dc7} 
+void UART\+\_\+\+DMA\+\_\+\+IDLE\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{huart}{}\end{DoxyParamCaption})}
+
+
+
+UART interrupt handler for idle line detection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & Pointer to UART handle triggering the interrupt.\\
+\hline
+\end{DoxyParams}
+Should be called from the HAL\+\_\+\+UART\+\_\+\+IRQHandler.
+
+UART interrupt handler for idle line detection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & Pointer to the UART handle triggering the interrupt.\\
+\hline
+\end{DoxyParams}
+Stops DMA temporarily, calculates received length, and checks for a complete command (terminated by "{}\textbackslash{}r\textbackslash{}n"{}). If found, sets {\ttfamily command\+\_\+ready}. 
+
+\label{doc-var-members}
+\Hypertarget{uart__dma__idle_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{uart__dma__idle_8h_a2359bfa4a10109d5dcc2e002cb8ece47}\index{uart\_dma\_idle.h@{uart\_dma\_idle.h}!buffer\_index@{buffer\_index}}
+\index{buffer\_index@{buffer\_index}!uart\_dma\_idle.h@{uart\_dma\_idle.h}}
+\doxysubsubsection{\texorpdfstring{buffer\_index}{buffer\_index}}
+{\footnotesize\ttfamily \label{uart__dma__idle_8h_a2359bfa4a10109d5dcc2e002cb8ece47} 
+uint8\+\_\+t buffer\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Current write index into the rx\+\_\+buffer. 
+
+Current write index into the rx\+\_\+buffer. \Hypertarget{uart__dma__idle_8h_a6dcf3de33714573b301e5db87df1f4f9}\index{uart\_dma\_idle.h@{uart\_dma\_idle.h}!command\_ready@{command\_ready}}
+\index{command\_ready@{command\_ready}!uart\_dma\_idle.h@{uart\_dma\_idle.h}}
+\doxysubsubsection{\texorpdfstring{command\_ready}{command\_ready}}
+{\footnotesize\ttfamily \label{uart__dma__idle_8h_a6dcf3de33714573b301e5db87df1f4f9} 
+volatile uint8\+\_\+t command\+\_\+ready\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Flag set when a full command is received and ready to parse. 
+
+Flag set when a full command is received and ready to parse. \Hypertarget{uart__dma__idle_8h_a7859af7e1d2d58c1bc67f781bbfbe818}\index{uart\_dma\_idle.h@{uart\_dma\_idle.h}!rx\_buffer@{rx\_buffer}}
+\index{rx\_buffer@{rx\_buffer}!uart\_dma\_idle.h@{uart\_dma\_idle.h}}
+\doxysubsubsection{\texorpdfstring{rx\_buffer}{rx\_buffer}}
+{\footnotesize\ttfamily \label{uart__dma__idle_8h_a7859af7e1d2d58c1bc67f781bbfbe818} 
+uint8\+\_\+t rx\+\_\+buffer\mbox{[}\mbox{\hyperlink{command__parser_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+UART DMA receive buffer shared with command parser or control logic. 
+
+UART DMA receive buffer shared with command parser or control logic. 
