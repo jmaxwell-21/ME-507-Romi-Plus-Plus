@@ -9,13 +9,27 @@ This folder contains the full STM32CubeIDE project for the STM32F411 microcontro
 - `.ioc` file – STM32CubeMX configuration file
 - `.project` and `.cproject` – Eclipse project files for STM32CubeIDE
 
-## How to Open
+## How to Open the Project
+
+To open this project in STM32CubeIDE:
+
+### Option 1: Import via `.ioc` File
 
 1. Open STM32CubeIDE
-2. Go to **File → Open Projects from File System...**
-3. Select this `Firmware/` folder
-4. Click **Finish**
+2. Go to **File → Open Projects from File System**
+3. Click **Directory…** and select the `firmware/` folder
+4. STM32CubeIDE will automatically detect and import the project
+5. Click **Finish**
 
-OR
+### Option 2: Open `.project` Directly
 
-Just double-click the `.project` file inside this folder to open it directly.
+1. Double-click the `.project` file in the `firmware/` folder
+2. STM32CubeIDE will open it as a recognized workspace project
+
+---
+
+## Notes
+
+- The `.ioc` file defines all clock settings, pin mappings, and peripheral configurations
+- Any changes made in `.ioc` can regenerate code in `Core/` and `Drivers/`
+>>>>>>> d6b4806f513f5e416bcf731e6409983e7a036d2e
