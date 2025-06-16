@@ -32,4 +32,3 @@ To open this project in STM32CubeIDE:
 
 - The `.ioc` file defines all clock settings, pin mappings, and peripheral configurations
 - Any changes made in `.ioc` can regenerate code in `Core/` and `Drivers/`
->>>>>>> d6b4806f513f5e416bcf731e6409983e7a036d2e
