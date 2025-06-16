@@ -1,6 +1,6 @@
 # Hardware
 
-This folder contains all electrical and mechanical design files for the Romi++ Differential Drive Robot, including PCB schematics, board layout, manufacturing assets, and mechanical CAD models.
+This folder contains all electrical and mechanical design files for the Romi++ Differential Drive Robot, including PCB schematics, board layout, manufacturing assets, and CAD models.
 
 ## Contents
 
@@ -8,14 +8,14 @@ This folder contains all electrical and mechanical design files for the Romi++ D
 
 - `JLCPCB Order Info/` – Gerber files, bill of materials (BOM), and pick-and-place data for PCB fabrication, see notes for more info
 - `PCB Design Files/` – Schematic (`.sch`), board layout (`.brd`), 3D model (`.step`), and full Fusion 360 project archive (`.f3z`)
-- Additional Files – Reference images of the board (front, back, isometric), schematic and layout PDFs
+- Additional Files – Reference images of the board, schematic and layout PDFs
 
 ### `Mechanical/` – SolidWorks CAD files, 3D-printable models, and robot images
 
 - `SolidWorks 2024 Part Files/` – Native `.SLDPRT` and `.SLDASM` files, including McMaster-Carr fasteners and vendor-supplied STEP models
 - `STL 3-D Print Files/` – Exported `.stl` files ready for 3D printing
 - `Robot BOM.csv` - Bill of materials for the mechanical assembly, see notes for more info
-- Additional Files – Images of the robot: CAD view, and pictures of the assembled robot
+- Additional Files – Images of the assembled robot and CAD assembly
 
 ---
 
