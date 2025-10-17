@@ -9,6 +9,9 @@ This folder contains the full STM32CubeIDE project for the STM32F411 microcontro
 - `.ioc` file – STM32CubeMX configuration file
 - `.project` and `.cproject` – Eclipse project files for STM32CubeIDE
 
+- `Additional Code/` - Python script for controlling robot and STM32CubeIDE project for HC-05 Bluetooth Module configuration
+- `Task Diagrams/` - Task diagrams for each FSM shown on the main page
+
 ## How to Open the Project
 
 To open this project in STM32CubeIDE:
