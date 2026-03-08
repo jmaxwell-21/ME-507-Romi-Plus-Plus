@@ -4,11 +4,11 @@ Design repository for Romi++, a self-balancing differential drive robot develope
 
 ## Documentation
 
-[View the complete code documentation (Doxygen)](https://jmaxwell-21.github.io/ME-507-Romi-Plus-Plus/)
+[View the complete Doxygen code documentation](https://jmaxwell-21.github.io/ME-507-Romi-Plus-Plus/)
 
 ## GitHub File Structure
 
-- `Firmware/` - STM32CubeIDE project and source code and FSM diagrams
+- `Firmware/` - STM32CubeIDE project source code and FSM diagrams
 - `Hardware/` - Mechanical and electrical design files and information
 - `Media/` -  Project photos and videos
 - `docs/` - Doxygen-generated HTML documentation
